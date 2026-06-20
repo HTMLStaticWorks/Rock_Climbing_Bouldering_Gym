@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SummitX Member Portal - Dashboard</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            darkbg: '#0B0F19',
+            cardbg1: '#111827',
+            cardbg2: '#1F2937',
+            primary: '#3B82F6',
+            secondary: '#22D3EE',
+            accent: '#F59E0B',
+          },
+          fontFamily: {
+            sans: ['DM Sans', 'sans-serif'],
+            heading: ['Space Grotesk', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <style>
+    /* Premium SaaS Dashboard overrides */
+    .sidebar-link.active {
+      background-color: rgba(59, 130, 246, 0.1);
+      border-left: 2px solid #3B82F6;
+      color: #3B82F6;
+    }
+    .neon-glow-border {
+      box-shadow: 0 0 15px rgba(34, 211, 238, 0.15);
+      border-color: rgba(34, 211, 238, 0.3);
+    }
+    .badge-locked {
+      filter: grayscale(1) opacity(0.4);
+    }
+  </style>
+</head>
+<body class="bg-[#0B0F19] text-[#F3F4F6] min-h-screen flex flex-col lg:flex-row overflow-x-hidden">
+
+  <!-- Sidebar Navigation (Desktop) -->
+  <aside class="hidden lg:flex flex-col w-64 glass-panel border-r border-gray-900 min-h-screen p-6 justify-between shrink-0">
+    <div class="space-y-8">
+      <!-- Portal Brand & Toggles -->
+      <div class="flex justify-between items-center">
+        <a class="flex items-center gap-2 text-[#F3F4F6] text-lg font-heading tracking-wider" href="index.html">
+          <i class="fa-solid fa-mountain-sun text-[#22D3EE]"></i>
+          <span>SUMMIT<span class="text-[#3B82F6] font-medium">X</span></span>
+        </a>
+        <div class="flex gap-2">
+          <button id="rtl-toggle" class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-800 hover:bg-gray-800 transition-colors" title="Toggle RTL">
+            <i id="rtl-icon" class="fa-solid fa-right-left text-xs text-gray-300"></i>
+          </button>
+          <button id="theme-toggle" class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-800 hover:bg-gray-800 transition-colors" title="Toggle Theme">
+            <i id="theme-icon" class="fa-regular fa-sun text-[#F59E0B] text-xs"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="space-y-1">
+        <button onclick="showSection('overview')" id="nav-overview" class="sidebar-link w-full text-left py-2.5 px-4 rounded-lg flex items-center gap-3 text-xs text-[#9CA3AF] hover:text-white transition-all active">
+          <i class="fa-solid fa-chart-pie w-4"></i> Dashboard
+        </button>
+        <button onclick="showSection('progress')" id="nav-progress" class="sidebar-link w-full text-left py-2.5 px-4 rounded-lg flex items-center gap-3 text-xs text-[#9CA3AF] hover:text-white transition-all">
+          <i class="fa-solid fa-chart-line w-4"></i> My Progress
+        </button>
+        <button onclick="showSection('log')" id="nav-log" class="sidebar-link w-full text-left py-2.5 px-4 rounded-lg flex items-center gap-3 text-xs text-[#9CA3AF] hover:text-white transition-all">
+          <i class="fa-solid fa-clipboard-list w-4"></i> Climbing Log
+        </button>
+        <button onclick="showSection('achievements')" id="nav-achievements" class="sidebar-link w-full text-left py-2.5 px-4 rounded-lg flex items-center gap-3 text-xs text-[#9CA3AF] hover:text-white transition-all">
+          <i class="fa-solid fa-medal w-4"></i> Achievements
+        </button>
+        <button onclick="showSection('routes')" id="nav-routes" class="sidebar-link w-full text-left py-2.5 px-4 rounded-lg flex items-center gap-3 text-xs text-[#9CA3AF] hover:text-white transition-all">
+          <i class="fa-solid fa-map w-4"></i> Routes
+        </button>
+        <button onclick="showSection('bookings')" id="nav-bookings" class="sidebar-link w-full text-left py-2.5 px-4 rounded-lg flex items-center gap-3 text-xs text-[#9CA3AF] hover:text-white transition-all">
+          <i class="fa-solid fa-calendar-check w-4"></i> Bookings
+        </button>
+        <button onclick="showSection('events')" id="nav-events" class="sidebar-link w-full text-left py-2.5 px-4 rounded-lg flex items-center gap-3 text-xs text-[#9CA3AF] hover:text-white transition-all">
+          <i class="fa-solid fa-trophy w-4"></i> Events
+        </button>
+        <button onclick="showSection('membership')" id="nav-membership" class="sidebar-link w-full text-left py-2.5 px-4 rounded-lg flex items-center gap-3 text-xs text-[#9CA3AF] hover:text-white transition-all">
+          <i class="fa-solid fa-credit-card w-4"></i> Membership
+        </button>
+        <button onclick="showSection('profile')" id="nav-profile" class="sidebar-link w-full text-left py-2.5 px-4 rounded-lg flex items-center gap-3 text-xs text-[#9CA3AF] hover:text-white transition-all">
+          <i class="fa-solid fa-circle-user w-4"></i> Profile
+        </button>
+      </nav>
+    </div>
+
+    <!-- User Section footer -->
+    <div class="flex items-center gap-3 border-t border-gray-900 pt-4">
+      <div class="w-8 h-8 rounded-full bg-[#3B82F6]/20 text-[#3B82F6] flex items-center justify-center font-heading text-xs">
+        MV
+      </div>
+      <div>
+        <p class="text-xs font-heading">Marcus Vance</p>
+        <a href="index.html" class="text-[10px] text-red-400 hover:underline">Log Out</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Mobile Top Header Bar -->
+  <header class="lg:hidden w-full glass-panel border-b border-gray-900 p-4 flex justify-between items-center z-30 shrink-0">
+    <a class="flex items-center gap-2 text-[#F3F4F6] text-sm font-heading tracking-wider" href="#">
+      <i class="fa-solid fa-mountain-sun text-[#22D3EE]"></i>
+      <span>SUMMITX <span class="text-[8px] text-gray-500 font-sans">PORTAL</span></span>
+    </a>
+    <div class="flex items-center gap-2">
+      <button id="rtl-toggle-mobile" class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-800 hover:bg-gray-800 transition-colors" title="Toggle RTL">
+        <i class="fa-solid fa-right-left text-xs text-gray-300"></i>
+      </button>
+      <button id="theme-toggle-mobile" class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-800 hover:bg-gray-800 transition-colors" title="Toggle Theme">
+        <i id="theme-icon-mobile" class="fa-regular fa-sun text-[#F59E0B] text-xs"></i>
+      </button>
+      <div class="w-7 h-7 rounded-full bg-[#3B82F6]/20 text-[#3B82F6] flex items-center justify-center font-heading text-[10px]">
+        MV
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Bottom Nav Menu -->
+  <nav class="lg:hidden fixed bottom-0 left-0 w-full glass-panel border-t border-gray-900 flex justify-around py-2 z-35 text-[10px]">
+    <button onclick="showSection('overview')" class="flex flex-col items-center text-[#9CA3AF] hover:text-white">
+      <i class="fa-solid fa-chart-pie mb-0.5"></i><span>Home</span>
+    </button>
+    <button onclick="showSection('progress')" class="flex flex-col items-center text-[#9CA3AF] hover:text-white">
+      <i class="fa-solid fa-chart-line mb-0.5"></i><span>Charts</span>
+    </button>
+    <button onclick="showSection('log')" class="flex flex-col items-center text-[#9CA3AF] hover:text-white">
+      <i class="fa-solid fa-clipboard-list mb-0.5"></i><span>Log</span>
+    </button>
+    <button onclick="showSection('routes')" class="flex flex-col items-center text-[#9CA3AF] hover:text-white">
+      <i class="fa-solid fa-map mb-0.5"></i><span>Routes</span>
+    </button>
+    <button onclick="showSection('achievements')" class="flex flex-col items-center text-[#9CA3AF] hover:text-white">
+      <i class="fa-solid fa-medal mb-0.5"></i><span>Badges</span>
+    </button>
+  </nav>
+
+  <!-- Main Content Box -->
+  <main class="flex-1 p-6 md:p-8 lg:p-10 overflow-y-auto mb-16 lg:mb-0">
+    
+    <!-- 1. OVERVIEW PANEL -->
+    <div id="panel-overview" class="dashboard-panel space-y-8">
+      <div class="flex justify-between items-center">
+        <div>
+          <h1 class="text-2xl font-heading">Welcome Back, Marcus</h1>
+          <p class="text-xs text-[#9CA3AF]">Colorado Climbing Gym Portal</p>
+        </div>
+        <button onclick="triggerQuickLog()" class="px-4 py-2 rounded-xl bg-[#3B82F6] hover:bg-[#3B82F6]/90 text-white font-medium text-xs flex items-center gap-1.5 shadow-lg shadow-[#3B82F6]/20">
+          <i class="fa-solid fa-plus"></i> Quick Log Climb
+        </button>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div class="glass-panel p-5 rounded-2xl space-y-2">
+          <span class="text-[10px] uppercase tracking-wider text-[#9CA3AF]">Current Redpoint</span>
+          <p class="text-2xl font-heading text-[#22D3EE]">V6 (5.12a)</p>
+        </div>
+        <div class="glass-panel p-5 rounded-2xl space-y-2">
+          <span class="text-[10px] uppercase tracking-wider text-[#9CA3AF]">Completed Routes</span>
+          <p class="text-2xl font-heading text-[#3B82F6]">84</p>
+        </div>
+        <div class="glass-panel p-5 rounded-2xl space-y-2">
+          <span class="text-[10px] uppercase tracking-wider text-[#9CA3AF]">Training Hours</span>
+          <p class="text-2xl font-heading text-[#F59E0B]">112h</p>
+        </div>
+        <div class="glass-panel p-5 rounded-2xl space-y-2">
+          <span class="text-[10px] uppercase tracking-wider text-[#9CA3AF]">Activity Streak</span>
+          <p class="text-2xl font-heading text-emerald-400">5 Days</p>
+        </div>
+      </div>
+
+      <!-- Overview Charts & Mini Logs -->
+      <div class="grid lg:grid-cols-12 gap-6">
+        <div class="lg:col-span-8 glass-panel p-6 rounded-2xl space-y-4">
+          <h4 class="text-sm font-heading">Performance Trend</h4>
+          <div class="h-64 relative">
+            <canvas id="overviewChart"></canvas>
+          </div>
+        </div>
+        <div class="lg:col-span-4 glass-panel p-6 rounded-2xl space-y-4">
+          <h4 class="text-sm font-heading">Recent Achievements</h4>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3 p-2 bg-[#0B0F19]/40 rounded-xl">
+              <i class="fa-solid fa-fire text-[#F59E0B] text-lg"></i>
+              <div>
+                <h5 class="text-xs font-heading">5 Day Streak</h5>
+                <p class="text-[10px] text-[#9CA3AF]">Logged sessions consecutively</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-2 bg-[#0B0F19]/40 rounded-xl">
+              <i class="fa-solid fa-mountain text-[#3B82F6] text-lg"></i>
+              <div>
+                <h5 class="text-xs font-heading">V6 Redpoint</h5>
+                <p class="text-[10px] text-[#9CA3AF]">Topped out Cave Wall Route</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. CLIMBING PROGRESS TRACKER PANEL -->
+    <div id="panel-progress" class="dashboard-panel space-y-6 hidden">
+      <div>
+        <h2 class="text-xl font-heading">Progression Analytics</h2>
+        <p class="text-xs text-[#9CA3AF]">Grade improvement metrics across weeks.</p>
+      </div>
+
+      <div class="glass-panel p-6 rounded-2xl space-y-4">
+        <h4 class="text-sm font-heading">V-Grade Progress Matrix (V0 - V15)</h4>
+        <div class="h-80 relative">
+          <canvas id="fullProgressChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. CLIMB LOG PANEL -->
+    <div id="panel-log" class="dashboard-panel space-y-6 hidden">
+      <div class="flex justify-between items-center">
+        <div>
+          <h2 class="text-xl font-heading">Climbing Logs</h2>
+          <p class="text-xs text-[#9CA3AF]">History of completed climbs and attempts.</p>
+        </div>
+        <button onclick="openLogModal()" class="px-4 py-2 rounded-xl bg-[#3B82F6] text-white text-xs font-medium"><i class="fa-solid fa-plus mr-1"></i> Add Log</button>
+      </div>
+
+      <!-- Logs Filter bar -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-between items-center glass-panel p-4 rounded-xl">
+        <input type="text" id="logSearch" placeholder="Search by route name..." class="px-4 py-1.5 rounded-lg bg-[#0B0F19] border border-gray-800 text-xs w-full sm:max-w-xs focus:outline-none focus:border-[#22D3EE]">
+        <select id="logGradeFilter" class="px-4 py-1.5 rounded-lg bg-[#0B0F19] border border-gray-800 text-xs focus:outline-none focus:border-[#22D3EE]">
+          <option value="all">All Grades</option>
+          <option value="V4">V4</option>
+          <option value="V5">V5</option>
+          <option value="V6">V6</option>
+        </select>
+      </div>
+
+      <!-- Logs Table -->
+      <div class="glass-panel rounded-2xl overflow-hidden">
+        <div class="table-responsive">
+          <table class="table table-dark table-hover mb-0 text-xs" id="climbLogTable">
+            <thead>
+              <tr class="border-b border-gray-800 text-[#9CA3AF]">
+                <th class="py-3 px-4">Date</th>
+                <th class="py-3 px-4">Route Name</th>
+                <th class="py-3 px-4">Grade</th>
+                <th class="py-3 px-4 text-center">Attempts</th>
+                <th class="py-3 px-4 text-right">Result</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-900">
+              <tr>
+                <td class="py-3 px-4 text-gray-500">2026-06-18</td>
+                <td class="py-3 px-4 font-medium">Cave Wave</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-[#3B82F6]/20 text-[#3B82F6]">V6</span></td>
+                <td class="py-3 px-4 text-center">3</td>
+                <td class="py-3 px-4 text-right text-emerald-400">Completed</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 text-gray-500">2026-06-16</td>
+                <td class="py-3 px-4 font-medium">Crimpy Horizon</td>
+                <td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-[#22D3EE]/20 text-[#22D3EE]">V5</span></td>
+                <td class="py-3 px-4 text-center">1</td>
+                <td class="py-3 px-4 text-right text-emerald-400">Completed</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. ACHIEVEMENT SYSTEM PANEL -->
+    <div id="panel-achievements" class="dashboard-panel space-y-6 hidden">
+      <div>
+        <h2 class="text-xl font-heading">Achievements & Milestones</h2>
+        <p class="text-xs text-[#9CA3AF]">Earn specialized badges by logging routes and maintaining training streaks.</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <!-- Badge 1 -->
+        <div onclick="clickBadge('First Climb')" class="glass-panel p-4 rounded-xl text-center space-y-2 cursor-pointer relative hover:border-gray-600 transition-colors">
+          <i class="fa-solid fa-shoe-prints text-emerald-400 text-3xl"></i>
+          <h5 class="text-xs font-heading">First Climb</h5>
+          <p class="text-[9px] text-[#9CA3AF]">Unlocked</p>
+        </div>
+        <!-- Badge 2 -->
+        <div onclick="clickBadge('10 Routes')" class="glass-panel p-4 rounded-xl text-center space-y-2 cursor-pointer relative hover:border-gray-600 transition-colors">
+          <i class="fa-solid fa-route text-blue-400 text-3xl"></i>
+          <h5 class="text-xs font-heading">10 Routes</h5>
+          <p class="text-[9px] text-[#9CA3AF]">Unlocked</p>
+        </div>
+        <!-- Badge 3 -->
+        <div id="badge-50" onclick="unlockFiftyBadge()" class="glass-panel p-4 rounded-xl text-center space-y-2 cursor-pointer relative hover:border-gray-650 transition-colors badge-locked">
+          <i class="fa-solid fa-trophy text-[#F59E0B] text-3xl"></i>
+          <h5 class="text-xs font-heading">50 Routes</h5>
+          <p class="text-[9px] text-gray-500" id="badge-50-label">Locked</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. ROUTE DIRECTORY PANEL -->
+    <div id="panel-routes" class="dashboard-panel space-y-6 hidden">
+      <div>
+        <h2 class="text-xl font-heading">Route Directory</h2>
+        <p class="text-xs text-[#9CA3AF]">Find live routes currently set at the facility.</p>
+      </div>
+
+      <!-- Filters -->
+      <div class="flex gap-4 glass-panel p-4 rounded-xl text-xs">
+        <select id="routeWallFilter" class="bg-[#0B0F19] border border-gray-800 px-3 py-1.5 rounded-lg focus:outline-none focus:border-[#22D3EE]">
+          <option value="all">All Walls</option>
+          <option value="cave">Cave Wall</option>
+          <option value="slab">Slab Wall</option>
+          <option value="overhang">Overhang Wall</option>
+        </select>
+        <select id="routeGradeFilter" class="bg-[#0B0F19] border border-gray-800 px-3 py-1.5 rounded-lg focus:outline-none focus:border-[#22D3EE]">
+          <option value="all">All Grades</option>
+          <option value="V5">V5</option>
+          <option value="V6">V6</option>
+          <option value="V7">V7</option>
+        </select>
+      </div>
+
+      <!-- Routes Cards Grid -->
+      <div class="grid md:grid-cols-3 gap-6" id="routesGrid">
+        <!-- Route 1 -->
+        <div class="glass-panel p-5 rounded-2xl space-y-3" data-wall="cave" data-grade="V6">
+          <div class="flex justify-between items-center">
+            <span class="text-[10px] bg-[#3B82F6]/20 text-[#3B82F6] px-2 py-0.5 rounded">Cave Wall</span>
+            <span class="text-xs font-heading text-[#F59E0B]">V6</span>
+          </div>
+          <h4 class="text-sm font-heading">Cave Wave</h4>
+          <p class="text-xs text-[#9CA3AF]">Set by: Liam Reynolds. Requires strong sloper holds and body tension.</p>
+        </div>
+        <!-- Route 2 -->
+        <div class="glass-panel p-5 rounded-2xl space-y-3" data-wall="slab" data-grade="V5">
+          <div class="flex justify-between items-center">
+            <span class="text-[10px] bg-[#22D3EE]/20 text-[#22D3EE] px-2 py-0.5 rounded">Slab Wall</span>
+            <span class="text-xs font-heading text-[#F59E0B]">V5</span>
+          </div>
+          <h4 class="text-sm font-heading">Friction Focus</h4>
+          <p class="text-xs text-[#9CA3AF]">Set by: Sarah Jenkins. Delicate footwork and precise balancing required.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. COACHING BOOKINGS -->
+    <div id="panel-bookings" class="dashboard-panel space-y-6 hidden">
+      <div>
+        <h2 class="text-xl font-heading">Coaching Sessions</h2>
+        <p class="text-xs text-[#9CA3AF]">Book or manage your private coaching schedules.</p>
+      </div>
+
+      <div class="glass-panel p-6 rounded-2xl space-y-4">
+        <h4 class="text-sm font-heading">Upcoming Bookings</h4>
+        <div class="p-4 bg-[#0B0F19]/60 border border-gray-800 rounded-xl flex justify-between items-center">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-[#3B82F6]/20 flex items-center justify-center text-[#3B82F6]">
+              <i class="fa-solid fa-dumbbell"></i>
+            </div>
+            <div>
+              <h5 class="text-xs font-heading">Sarah Jenkins (Finger strength & dynos)</h5>
+              <p class="text-[10px] text-[#9CA3AF]">June 26, 2026 • 10:00 - 11:30</p>
+            </div>
+          </div>
+          <span class="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded uppercase font-heading">Confirmed</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. EVENTS PANEL -->
+    <div id="panel-events" class="dashboard-panel space-y-6 hidden">
+      <div>
+        <h2 class="text-xl font-heading">Event Center</h2>
+        <p class="text-xs text-[#9CA3AF]">Participate in upcoming tournaments and climbing workshops.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="glass-panel p-6 rounded-2xl space-y-4">
+          <h4 class="text-sm font-heading">Boulder Bash Qualifiers</h4>
+          <p class="text-xs text-[#9CA3AF]">Compete in 15 different qualifier route structures to secure top-tier finals positions.</p>
+          <button onclick="alert('Registered for Summer Boulder Bash!');" class="w-full py-2 rounded-lg bg-[#3B82F6] text-white text-xs font-medium">Register</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. MEMBERSHIP PORTAL -->
+    <div id="panel-membership" class="dashboard-panel space-y-6 hidden">
+      <div>
+        <h2 class="text-xl font-heading">Membership & Billing</h2>
+        <p class="text-xs text-[#9CA3AF]">Manage your plan billing states and download invoices.</p>
+      </div>
+
+      <div class="glass-panel p-6 rounded-2xl space-y-4">
+        <div class="flex justify-between items-center border-b border-gray-800 pb-4">
+          <div>
+            <h4 class="text-sm font-heading">Monthly Ascent Pass</h4>
+            <p class="text-[10px] text-[#9CA3AF]">Active status • Auto-renews on July 01, 2026</p>
+          </div>
+          <span class="text-xs font-heading text-[#22D3EE]">$95 / month</span>
+        </div>
+        <button onclick="alert('Plan management details loading...');" class="px-4 py-2 rounded-xl border border-gray-800 text-xs hover:bg-gray-800 transition-colors">Manage Payment Method</button>
+      </div>
+    </div>
+
+    <!-- 9. PROFILE PANEL -->
+    <div id="panel-profile" class="dashboard-panel space-y-6 hidden">
+      <div>
+        <h2 class="text-xl font-heading">Athlete Profile</h2>
+        <p class="text-xs text-[#9CA3AF]">Update your preferences and climbing goals.</p>
+      </div>
+
+      <div class="glass-panel p-6 rounded-2xl space-y-4">
+        <div>
+          <label class="block text-[10px] uppercase tracking-widest text-[#9CA3AF] mb-1">Climbing Style Focus</label>
+          <select class="w-full px-4 py-2 bg-[#0B0F19] border border-gray-850 rounded-xl text-xs text-white focus:outline-none focus:border-[#22D3EE]">
+            <option>Lead Climbing</option>
+            <option>Bouldering cave</option>
+            <option>Slab balance</option>
+          </select>
+        </div>
+        <button onclick="alert('Profile updated successfully!');" class="w-full py-2.5 rounded-xl bg-[#3B82F6] text-white text-xs font-medium">Save Preferences</button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Log Climb Modal -->
+  <div class="modal fade" id="logClimbModal" tabindex="-1" aria-labelledby="logClimbModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-[#111827] border border-gray-800 text-white rounded-3xl p-6">
+        <div class="modal-header border-b-0 p-0 justify-between items-center">
+          <h5 class="modal-title font-heading text-lg" id="logClimbModalLabel">Log Completed Climb</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0 mt-4">
+          <form class="space-y-4" id="logClimbForm" onsubmit="submitClimbLog(event)">
+            <div>
+              <label class="block text-[10px] uppercase tracking-widest text-[#9CA3AF] mb-1">Route Name</label>
+              <input type="text" id="logRouteName" required placeholder="eg. Moon Wall Dyno" class="w-full px-4 py-2 bg-[#0B0F19] border border-gray-850 rounded-xl text-xs text-white focus:outline-none focus:border-[#22D3EE]">
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-[10px] uppercase tracking-widest text-[#9CA3AF] mb-1">Grade</label>
+                <select id="logRouteGrade" class="w-full px-4 py-2 bg-[#0B0F19] border border-gray-850 rounded-xl text-xs text-white focus:outline-none focus:border-[#22D3EE]">
+                  <option value="V4">V4</option>
+                  <option value="V5">V5</option>
+                  <option value="V6">V6</option>
+                  <option value="V7">V7</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-[10px] uppercase tracking-widest text-[#9CA3AF] mb-1">Attempts</label>
+                <input type="number" id="logRouteAttempts" required min="1" max="20" value="1" class="w-full px-4 py-2 bg-[#0B0F19] border border-gray-850 rounded-xl text-xs text-white focus:outline-none focus:border-[#22D3EE]">
+              </div>
+            </div>
+            <button type="submit" class="w-full py-3 rounded-xl bg-[#3B82F6] hover:bg-[#3B82F6]/90 transition-all font-medium text-xs uppercase tracking-wider mt-4">
+              Submit Climb Log
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

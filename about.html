@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - SummitX Climbing</title>
+  <meta name="description" content="Learn about the SummitX Climbing story, our core values of safety, innovation, and inclusivity, our history timeline, and the leadership team behind Denver's premium climbing destination.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            darkbg: '#0B0F19',
+            cardbg1: '#111827',
+            cardbg2: '#1F2937',
+            primary: '#3B82F6',
+            secondary: '#22D3EE',
+            accent: '#F59E0B',
+          },
+          fontFamily: {
+            sans: ['DM Sans', 'sans-serif'],
+            heading: ['Space Grotesk', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-[#0B0F19] text-[#F3F4F6]">
+
+  <!-- Scroll Progress -->
+  <div id="scroll-progress"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top glass-navbar py-3">
+    <div class="container-fluid px-4 max-w-7xl mx-auto flex justify-between items-center">
+      <a class="navbar-brand flex items-center gap-2 text-[#F3F4F6] text-xl tracking-wider font-heading" href="index.html">
+        <i class="fa-solid fa-mountain-sun text-[#22D3EE]"></i>
+        <span>SUMMIT<span class="text-[#3B82F6] font-medium">X</span></span>
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="hidden lg:flex items-center gap-8">
+        <a class="text-[#D1D5DB] hover:text-[#22D3EE] transition-colors" href="index.html">Home</a>
+        <a class="text-[#D1D5DB] hover:text-[#22D3EE] transition-colors" href="home2.html">Home 2</a>
+        
+        <a class="text-[#F3F4F6] hover:text-[#22D3EE] transition-colors" href="about.html">About</a>
+        <a class="text-[#D1D5DB] hover:text-[#22D3EE] transition-colors" href="programs.html">Programs</a>
+
+        <a class="text-[#D1D5DB] hover:text-[#22D3EE] transition-colors" href="coaching.html">Coaching</a>
+        <a class="text-[#D1D5DB] hover:text-[#22D3EE] transition-colors" href="community.html">Community</a>
+
+        <a class="text-[#D1D5DB] hover:text-[#22D3EE] transition-colors" href="dashboard.html">Dashboard</a>
+        <a class="text-[#D1D5DB] hover:text-[#22D3EE] transition-colors" href="contact.html">Contact</a>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="hidden lg:flex items-center gap-4">
+        <button id="rtl-toggle" class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-800 hover:bg-gray-800 transition-colors" title="Toggle RTL">
+          <i id="rtl-icon" class="fa-solid fa-right-left text-lg text-gray-300"></i>
+        </button>
+        <button id="theme-toggle" class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-800 hover:bg-gray-800 transition-colors" title="Toggle Theme">
+          <i id="theme-icon" class="fa-regular fa-sun text-[#F59E0B] text-lg"></i>
+        </button>
+        <a href="register.html" class="px-5 py-2 rounded-full border border-[#3B82F6] bg-[#3B82F6]/10 text-[#F3F4F6] hover:bg-[#3B82F6] transition-all duration-300 font-medium text-sm">
+          Sign Up
+        </a>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button class="lg:hidden text-[#F3F4F6] text-xl" id="mobile-menu-btn">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Dropdown Navigation -->
+  <div id="mobile-menu" class="hidden fixed top-[70px] left-0 w-full glass-panel py-6 px-4 z-40 lg:hidden flex flex-col gap-4">
+    <a class="text-lg text-[#D1D5DB]" href="index.html">Home</a>
+    <a class="text-lg text-[#D1D5DB]" href="home2.html">Home 2</a>
+    <a class="text-lg text-[#F3F4F6]" href="about.html">About</a>
+    <a class="text-lg text-[#D1D5DB]" href="programs.html">Programs</a>
+    <a class="text-lg text-[#D1D5DB]" href="coaching.html">Coaching</a>
+    <a class="text-lg text-[#D1D5DB]" href="community.html">Community</a>
+
+    <a class="text-lg text-[#D1D5DB]" href="dashboard.html">Dashboard</a>
+    <a class="text-lg text-[#D1D5DB]" href="contact.html">Contact</a>
+    <div class="h-[1px] bg-gray-800 my-2"></div>
+    <div class="flex justify-between items-center">
+      <span class="text-[#D1D5DB]">Toggle RTL</span>
+      <button id="rtl-toggle-mobile" class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-800 hover:bg-gray-800 transition-colors">
+        <i class="fa-solid fa-right-left text-lg text-gray-300"></i>
+      </button>
+    </div>
+    <div class="flex justify-between items-center">
+      <span class="text-[#D1D5DB]">Toggle Theme</span>
+      <button id="theme-toggle-mobile" class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-800 hover:bg-gray-800 transition-colors">
+        <i id="theme-icon-mobile" class="fa-regular fa-sun text-[#F59E0B] text-lg"></i>
+      </button>
+    </div>
+    <a href="register.html" class="w-full text-center py-3 rounded-xl bg-[#3B82F6] text-white hover:bg-opacity-95 transition-all">
+      Sign Up
+    </a>
+  </div>
+
+  <!-- Hero Section -->
+  <header class="pt-32 pb-16 relative overflow-hidden">
+    <div class="bg-gradient-orb orb-primary -top-12 -left-12"></div>
+    <div class="bg-gradient-orb orb-secondary -bottom-12 -right-12"></div>
+    
+    <div class="container max-w-7xl mx-auto px-4 grid md:grid-cols-12 gap-8 items-center relative z-10">
+      <div class="md:col-span-7 space-y-6" data-aos="fade-right">
+        <span class="text-xs text-[#22D3EE] uppercase tracking-widest font-heading">Elevating the Ascent</span>
+        <h1 class="text-4xl md:text-5xl font-heading leading-tight">The SummitX Story</h1>
+        <p class="text-[#D1D5DB] text-sm leading-relaxed max-w-xl">
+          Founded in 2022, SummitX was born out of a desire to unite premium luxury comfort with high-performance climbing science. We envisioned a sanctuary where elite route-setting meets modern biometric tracking and state-of-the-art training environments.
+        </p>
+        <p class="text-[#9CA3AF] text-xs leading-relaxed max-w-xl">
+          Whether you are tying in for your first auto-belay experience or pushing limits on a V12 overhang, SummitX provides the perfect container of premium equipment, science-backed coaches, and a welcoming community to support your vertical ambitions.
+        </p>
+        <div class="pt-2">
+          <a href="programs.html" class="inline-block px-6 py-2.5 rounded-full bg-[#3B82F6] text-white text-sm font-medium hover:bg-opacity-90 transition-all shadow-lg hover:shadow-[#3B82F6]/20">
+            Explore Our Programs
+          </a>
+        </div>
+      </div>
+      <div class="md:col-span-5" data-aos="fade-left">
+        <div class="relative p-2 glass-panel rounded-3xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=600&q=80" alt="SummitX Climbing gym interior" class="rounded-2xl w-full h-80 object-cover">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Vision & Mission Section -->
+  <section class="py-12 relative overflow-hidden border-b border-gray-900 bg-[#111827]/20">
+    <div class="container max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8 relative z-10">
+      <!-- Mission -->
+      <div class="glass-panel p-8 rounded-3xl space-y-4 border border-[#22D3EE]/25 shadow-lg shadow-[#22D3EE]/5" data-aos="fade-right">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-[#22D3EE]/10 flex items-center justify-center text-[#22D3EE]">
+            <i class="fa-solid fa-bullseye text-lg"></i>
+          </div>
+          <h3 class="text-xl font-heading">Our Mission</h3>
+        </div>
+        <p class="text-xs text-[#D1D5DB] leading-relaxed">
+          To provide a world-class training sanctuary that empowers climbing athletes of every level. We deliver premium, science-backed route configurations, safe environments, and personalized fitness biomechanics to help you systematically shatter your physical limits.
+        </p>
+      </div>
+
+      <!-- Vision -->
+      <div class="glass-panel p-8 rounded-3xl space-y-4 border border-[#3B82F6]/25 shadow-lg shadow-[#3B82F6]/5" data-aos="fade-left">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-[#3B82F6]/10 flex items-center justify-center text-[#3B82F6]">
+            <i class="fa-solid fa-eye text-lg"></i>
+          </div>
+          <h3 class="text-xl font-heading">Our Vision</h3>
+        </div>
+        <p class="text-xs text-[#D1D5DB] leading-relaxed">
+          To define the future of indoor adventure sports. We envision a globally integrated community of climbers connected through shared digital progress, modern safety innovations, and sustainable wilderness stewardship, making high-performance climbing accessible to all.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values Section -->
+  <section class="py-16 relative">
+    <div class="container max-w-7xl mx-auto px-4 space-y-12">
+      <div class="text-center space-y-2">
+        <h2 class="text-3xl font-heading" data-aos="fade-up">Our Core Pillars</h2>
+        <p class="text-[#9CA3AF] text-sm max-w-md mx-auto" data-aos="fade-up" data-aos-delay="100">
+          The values that guide every setter, coach, and athlete inside SummitX.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="glass-panel p-6 rounded-2xl space-y-4" data-aos="fade-up" data-aos-delay="100">
+          <i class="fa-solid fa-shield-halved text-[#3B82F6] text-3xl"></i>
+          <h4 class="text-lg font-heading">Safety Integrity</h4>
+          <p class="text-xs text-[#9CA3AF]">
+            Continuous safety certification, premium flooring designs, and advanced auto-belay technology to keep every ascent secure.
+          </p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-2xl space-y-4" data-aos="fade-up" data-aos-delay="200">
+          <i class="fa-solid fa-microchip text-[#22D3EE] text-3xl"></i>
+          <h4 class="text-lg font-heading">Tech-Driven Training</h4>
+          <p class="text-xs text-[#9CA3AF]">
+            Integrating smart climbing boards, kinematic video capture tools, and digital logs to accelerate climbing progressions.
+          </p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-2xl space-y-4" data-aos="fade-up" data-aos-delay="300">
+          <i class="fa-solid fa-hands-holding text-[#F59E0B] text-3xl"></i>
+          <h4 class="text-lg font-heading">Radical Inclusion</h4>
+          <p class="text-xs text-[#9CA3AF]">
+            Dedicated adaptive programs, sensory-friendly hours, and structured classes designed for climbers of all capabilities.
+          </p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-2xl space-y-4" data-aos="fade-up" data-aos-delay="400">
+          <i class="fa-solid fa-leaf text-[#10B981] text-3xl"></i>
+          <h4 class="text-lg font-heading">Preservation Stewardship</h4>
+          <p class="text-xs text-[#9CA3AF]">
+            Partnering with local outdoor coalitions for trail restoration, safe bolt replacements, and environmental education.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- History Timeline -->
+  <section class="py-16 bg-[#111827]/40 border-y border-gray-900">
+    <div class="container max-w-4xl mx-auto px-4 space-y-12">
+      <div class="text-center space-y-2">
+        <h2 class="text-3xl font-heading" data-aos="fade-up">Our Journey</h2>
+        <p class="text-[#9CA3AF] text-sm" data-aos="fade-up" data-aos-delay="100">Chronicles of growth, innovation, and community development.</p>
+      </div>
+
+      <!-- Vertical Timeline -->
+      <div class="relative border-l border-gray-800 ml-4 md:ml-32 space-y-8">
+        <!-- Node 1 -->
+        <div class="relative pl-6 md:pl-8" data-aos="fade-up">
+          <div class="absolute -left-[9px] top-1 w-4.5 h-4.5 rounded-full bg-[#3B82F6] border-4 border-[#0B0F19]"></div>
+          <span class="absolute left-[-110px] top-0 hidden md:block text-right w-20 font-heading text-sm text-[#3B82F6]">2022</span>
+          <div class="glass-panel p-5 rounded-2xl">
+            <span class="md:hidden text-xs text-[#3B82F6] font-heading font-medium block mb-1">2022</span>
+            <h4 class="text-sm font-heading">Foundation & Launch</h4>
+            <p class="text-xs text-[#9CA3AF] mt-1">
+              Opened our flagship 15,000 sq ft facility in Denver, featuring custom timber bouldering arches and smart board integration.
+            </p>
+          </div>
+        </div>
+
+        <!-- Node 2 -->
+        <div class="relative pl-6 md:pl-8" data-aos="fade-up" data-aos-delay="100">
+          <div class="absolute -left-[9px] top-1 w-4.5 h-4.5 rounded-full bg-[#22D3EE] border-4 border-[#0B0F19]"></div>
+          <span class="absolute left-[-110px] top-0 hidden md:block text-right w-20 font-heading text-sm text-[#22D3EE]">2023</span>
+          <div class="glass-panel p-5 rounded-2xl">
+            <span class="md:hidden text-xs text-[#22D3EE] font-heading font-medium block mb-1">2023</span>
+            <h4 class="text-sm font-heading">Launch of Adaptive Programs</h4>
+            <p class="text-xs text-[#9CA3AF] mt-1">
+              Introduced customized pulley riggings and certified adaptive coaching, establishing SummitX as an inclusive regional hub.
+            </p>
+          </div>
+        </div>
+
+        <!-- Node 3 -->
+        <div class="relative pl-6 md:pl-8" data-aos="fade-up" data-aos-delay="200">
+          <div class="absolute -left-[9px] top-1 w-4.5 h-4.5 rounded-full bg-[#F59E0B] border-4 border-[#0B0F19]"></div>
+          <span class="absolute left-[-110px] top-0 hidden md:block text-right w-20 font-heading text-sm text-[#F59E0B]">2025</span>
+          <div class="glass-panel p-5 rounded-2xl">
+            <span class="md:hidden text-xs text-[#F59E0B] font-heading font-medium block mb-1">2025</span>
+            <h4 class="text-sm font-heading">Bio-Mechanic Lab Integration</h4>
+            <p class="text-xs text-[#9CA3AF] mt-1">
+              Deconstructed climbing kinematics by introducing multi-angle cameras and high-tech performance coaching programs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership Section -->
+  <section class="py-16">
+    <div class="container max-w-7xl mx-auto px-4 space-y-12">
+      <div class="text-center space-y-2">
+        <h2 class="text-3xl font-heading" data-aos="fade-up">Leadership Team</h2>
+        <p class="text-[#9CA3AF] text-sm max-w-md mx-auto" data-aos="fade-up" data-aos-delay="100">
+          Meet the experienced setters, coaches, and founders guiding the SummitX vision.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Team 1 -->
+        <div class="glass-panel p-5 rounded-2xl text-center space-y-3" data-aos="zoom-in" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Evelyn Carter" class="w-24 h-24 rounded-full mx-auto object-cover border-2 border-[#3B82F6]">
+          <div>
+            <h4 class="text-base font-heading">Evelyn Carter</h4>
+            <p class="text-[10px] text-[#22D3EE] uppercase tracking-widest font-heading">Co-Founder & Director</p>
+          </div>
+          <p class="text-xs text-[#9CA3AF] leading-relaxed">
+            Former competitive sport climber with 15+ years of route-setting design and safety operations management.
+          </p>
+        </div>
+
+        <!-- Team 2 -->
+        <div class="glass-panel p-5 rounded-2xl text-center space-y-3" data-aos="zoom-in" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" alt="Dr. Raymond Finch" class="w-24 h-24 rounded-full mx-auto object-cover border-2 border-[#22D3EE]">
+          <div>
+            <h4 class="text-base font-heading">Dr. Raymond Finch</h4>
+            <p class="text-[10px] text-[#22D3EE] uppercase tracking-widest font-heading">Sports Scientist</p>
+          </div>
+          <p class="text-xs text-[#9CA3AF] leading-relaxed">
+            Specialist in biomechanics and muscular load diagnostics, designing customized programs to break performance plateaus.
+          </p>
+        </div>
+
+        <!-- Team 3 -->
+        <div class="glass-panel p-5 rounded-2xl text-center space-y-3" data-aos="zoom-in" data-aos-delay="300">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" alt="Marcus Vance" class="w-24 h-24 rounded-full mx-auto object-cover border-2 border-[#F59E0B]">
+          <div>
+            <h4 class="text-base font-heading">Marcus Vance</h4>
+            <p class="text-[10px] text-[#22D3EE] uppercase tracking-widest font-heading">Head Route-Setter</p>
+          </div>
+          <p class="text-xs text-[#9CA3AF] leading-relaxed">
+            Master route setter holding multiple national bouldering certifications, bringing dynamic modern betas to our walls.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#0B0F19] border-t border-gray-900 pt-16 pb-12 text-sm text-[#9CA3AF]">
+    <div class="container max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+      <!-- Brand column -->
+      <div class="md:col-span-4 space-y-4">
+        <a class="flex items-center gap-2 text-[#F3F4F6] text-xl font-heading tracking-wider" href="index.html">
+          <i class="fa-solid fa-mountain-sun text-[#22D3EE]"></i>
+          <span>SUMMIT<span class="text-[#3B82F6] font-medium">X</span></span>
+        </a>
+        <p class="text-xs leading-relaxed text-[#9CA3AF] max-w-sm">
+          SummitX blends scientific performance logs, smart training boards, and Olympic conditioning systems to accelerate your route progressions.
+        </p>
+        <div class="flex gap-3 pt-2">
+          <a href="#" class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-800 hover:border-gray-600 hover:text-[#22D3EE] text-gray-400 transition-colors" title="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="#" class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-800 hover:border-gray-600 hover:text-[#22D3EE] text-gray-400 transition-colors" title="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="#" class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-800 hover:border-gray-600 hover:text-[#22D3EE] text-gray-400 transition-colors" title="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="#" class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-800 hover:border-gray-600 hover:text-[#22D3EE] text-gray-400 transition-colors" title="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Links Column 1: Explore -->
+      <div class="md:col-span-2 space-y-3">
+        <h5 class="text-[#F3F4F6] font-heading font-medium text-xs uppercase tracking-widest">Explore</h5>
+        <ul class="space-y-2 text-xs">
+          <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="home2.html" class="hover:text-white transition-colors">Home 2</a></li>
+          <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
+          <li><a href="programs.html" class="hover:text-white transition-colors">Programs</a></li>
+          <li><a href="coaching.html" class="hover:text-white transition-colors">Coaching</a></li>
+          <li><a href="community.html" class="hover:text-white transition-colors">Community</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 2: Athlete Portal -->
+      <div class="md:col-span-2 space-y-3">
+        <h5 class="text-[#F3F4F6] font-heading font-medium text-xs uppercase tracking-widest">Athlete Portal</h5>
+        <ul class="space-y-2 text-xs">
+          <li><a href="dashboard.html" class="hover:text-white transition-colors">Dashboard</a></li>
+          <li><a href="login.html" class="hover:text-white transition-colors">Log In</a></li>
+          <li><a href="register.html" class="hover:text-white transition-colors">Sign Up</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 3: Contact & Info -->
+      <div class="md:col-span-4 space-y-3">
+        <h5 class="text-[#F3F4F6] font-heading font-medium text-xs uppercase tracking-widest">SummitX Location</h5>
+        <p class="text-xs leading-relaxed text-[#9CA3AF]">
+          404 Boulder Crest Blvd,<br>Denver, CO 80202
+        </p>
+        <p class="text-xs text-[#9CA3AF] pt-1">
+          <i class="fa-solid fa-envelope mr-1.5 text-gray-500"></i>info@summitxclimbing.com<br>
+          <i class="fa-solid fa-phone mr-1.5 text-gray-500"></i>(303) 555-0199
+        </p>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="container max-w-7xl mx-auto px-4 pt-6 border-t border-gray-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+      <p class="text-[#6B7280]">&copy; 2026 SummitX Climbing. Climb Higher, Push Further.</p>
+      <div class="flex gap-4">
+        <a href="#" class="hover:text-[#F3F4F6] text-gray-500 transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-[#F3F4F6] text-gray-500 transition-colors">Safety Waiver</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Action Button (Back to Top) -->
+  <button id="back-to-top" class="back-to-top" aria-label="Scroll to top">
+    <i class="fa-solid fa-angle-up text-lg"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init({ duration: 800, once: true });
+    });
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Glowing Sun -->
+  <circle cx="70" cy="30" r="16" fill="#22D3EE" />
+  <!-- Secondary Mountain -->
+  <path d="M40 85 L65 50 L90 85 Z" fill="#1D4ED8" opacity="0.7" />
+  <!-- Primary Mountain -->
+  <path d="M10 85 L45 35 L80 85 Z" fill="#3B82F6" />
+</svg>
