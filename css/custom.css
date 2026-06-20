@@ -292,3 +292,12 @@ button[type="submit"]:hover,
   box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.45) !important;
   filter: brightness(1.1) !important;
 }
+
+/* Make RTL icon visible/brighter contrast in light mode */
+[data-theme="light"] #rtl-icon,
+[data-theme="light"] .fa-right-left,
+[data-theme="light"] #rtl-toggle i,
+[data-theme="light"] #rtl-toggle-mobile i {
+  color: var(--text-secondary) !important;
+}
+
