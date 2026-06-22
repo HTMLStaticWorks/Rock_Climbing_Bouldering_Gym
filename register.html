@@ -78,16 +78,16 @@
       <form class="space-y-4" onsubmit="validatePasswords(event)">
         <div>
           <label class="block text-[10px] uppercase tracking-widest text-[#9CA3AF] mb-1">Full Name</label>
-          <input type="text" required placeholder="Alex Honnold" class="w-full px-4 py-2.5 rounded-xl bg-[#0B0F19]/60 border border-gray-800 text-white text-xs placeholder-gray-600 focus:outline-none neon-focus transition-all">
+          <input type="text" required class="w-full px-4 py-2.5 rounded-xl bg-[#0B0F19]/60 border border-gray-800 text-white text-xs placeholder-gray-600 focus:outline-none neon-focus transition-all">
         </div>
         <div>
           <label class="block text-[10px] uppercase tracking-widest text-[#9CA3AF] mb-1">Email address</label>
-          <input type="email" required placeholder="name@domain.com" autocomplete="email" class="w-full px-4 py-2.5 rounded-xl bg-[#0B0F19]/60 border border-gray-800 text-white text-xs placeholder-gray-600 focus:outline-none neon-focus transition-all">
+          <input type="email" required autocomplete="email" class="w-full px-4 py-2.5 rounded-xl bg-[#0B0F19]/60 border border-gray-800 text-white text-xs placeholder-gray-600 focus:outline-none neon-focus transition-all">
         </div>
         <div>
           <label class="block text-[10px] uppercase tracking-widest text-[#9CA3AF] mb-1">Password</label>
           <div class="relative">
-            <input id="reg-password" type="password" required placeholder="Enter your password" autocomplete="new-password" class="w-full px-4 py-2.5 rounded-xl bg-[#0B0F19]/60 border border-gray-800 text-white text-xs placeholder-gray-600 focus:outline-none neon-focus transition-all pr-10">
+            <input id="reg-password" type="password" required autocomplete="new-password" class="w-full px-4 py-2.5 rounded-xl bg-[#0B0F19]/60 border border-gray-800 text-white text-xs placeholder-gray-600 focus:outline-none neon-focus transition-all pr-10">
             <button type="button" onclick="toggleRegPasswordVisibility('reg-password', 'reg-password-eye')" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition-colors text-xs">
               <i id="reg-password-eye" class="fa-regular fa-eye"></i>
             </button>
@@ -96,7 +96,7 @@
         <div>
           <label class="block text-[10px] uppercase tracking-widest text-[#9CA3AF] mb-1">Confirm Password</label>
           <div class="relative">
-            <input id="reg-confirm-password" type="password" required placeholder="Confirm your password" autocomplete="new-password" class="w-full px-4 py-2.5 rounded-xl bg-[#0B0F19]/60 border border-gray-800 text-white text-xs placeholder-gray-600 focus:outline-none neon-focus transition-all pr-10">
+            <input id="reg-confirm-password" type="password" required autocomplete="new-password" class="w-full px-4 py-2.5 rounded-xl bg-[#0B0F19]/60 border border-gray-800 text-white text-xs placeholder-gray-600 focus:outline-none neon-focus transition-all pr-10">
             <button type="button" onclick="toggleRegPasswordVisibility('reg-confirm-password', 'reg-confirm-password-eye')" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition-colors text-xs">
               <i id="reg-confirm-password-eye" class="fa-regular fa-eye"></i>
             </button>
