@@ -137,7 +137,7 @@
       </div>
       <div class="lg:col-span-5 relative" data-aos="fade-left">
         <div class="h-[300px] sm:h-[400px] rounded-3xl overflow-hidden border border-gray-800 shadow-2xl relative">
-          <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=800&q=80" alt="Climbing community group" class="w-full h-full object-cover object-center">
+          <img src="https://images.pexels.com/photos/5916523/pexels-photo-5916523.jpeg" alt="Climbing community group" class="w-full h-full object-cover object-center">
           <div class="absolute inset-0 bg-gradient-to-t from-[#0B0F19]/60 to-transparent opacity-50"></div>
         </div>
       </div>
@@ -146,69 +146,70 @@
 
   <!-- Community Leaderboard -->
   <main class="container max-w-7xl mx-auto px-4 py-12 space-y-24">
-    <section id="leaderboard-section" class="grid lg:grid-cols-12 gap-12 items-start" data-aos="fade-up">
+    <section id="leaderboard-section" class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start" data-aos="fade-up">
       <!-- Left side: Leaders -->
-      <div class="lg:col-span-8 space-y-6">
-        <h2 class="text-2xl font-heading flex items-center gap-2">
+      <div class="lg:col-span-8 space-y-6 min-w-0 w-full">
+        <h2 class="text-xl sm:text-2xl font-heading flex items-center gap-2">
           <i class="fa-solid fa-ranking-star text-[#F59E0B]"></i>
           Monthly Climb Leaderboard
         </h2>
 
-        <div class="glass-panel rounded-2xl overflow-hidden">
-          <div class="table-responsive">
-            <table class="table table-dark table-hover mb-0 text-xs">
-              <thead>
-                <tr class="border-b border-gray-800 text-[#9CA3AF]">
-                  <th class="py-3 px-4">Rank</th>
-                  <th class="py-3 px-4">Climber</th>
-                  <th class="py-3 px-4 text-center">Routes Logged</th>
-                  <th class="py-3 px-4 text-center">Highest Redpoint</th>
-                  <th class="py-3 px-4 text-right">Points</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-gray-900">
-                <tr>
-                  <td class="py-3 px-4 font-heading text-[#22D3EE]">#1</td>
-                  <td class="py-3 px-4 flex items-center gap-2">
-                    <span
-                      class="w-6 h-6 rounded-full bg-blue-500 text-[10px] text-white flex items-center justify-center font-heading">A</span>
-                    <span>Alex Honn</span>
-                  </td>
-                  <td class="py-3 px-4 text-center">142</td>
-                  <td class="py-3 px-4 text-center text-[#F59E0B]">V11 (5.14a)</td>
-                  <td class="py-3 px-4 text-right text-[#22D3EE]">14,200</td>
-                </tr>
-                <tr>
-                  <td class="py-3 px-4 font-heading text-[#22D3EE]">#2</td>
-                  <td class="py-3 px-4 flex items-center gap-2">
-                    <span
-                      class="w-6 h-6 rounded-full bg-purple-500 text-[10px] text-white flex items-center justify-center font-heading">E</span>
-                    <span>Emily Harrop</span>
-                  </td>
-                  <td class="py-3 px-4 text-center">119</td>
-                  <td class="py-3 px-4 text-center text-[#F59E0B]">V10 (5.13d)</td>
-                  <td class="py-3 px-4 text-right text-[#22D3EE]">11,900</td>
-                </tr>
-                <tr>
-                  <td class="py-3 px-4 font-heading text-[#22D3EE]">#3</td>
-                  <td class="py-3 px-4 flex items-center gap-2">
-                    <span
-                      class="w-6 h-6 rounded-full bg-green-500 text-[10px] text-white flex items-center justify-center font-heading">T</span>
-                    <span>Tommy Cald</span>
-                  </td>
-                  <td class="py-3 px-4 text-center">98</td>
-                  <td class="py-3 px-4 text-center text-[#F59E0B]">V10 (5.14b)</td>
-                  <td class="py-3 px-4 text-right text-[#22D3EE]">10,800</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="glass-panel rounded-2xl overflow-x-auto">
+          <table class="table table-dark table-hover mb-0 text-xs w-full">
+            <thead>
+              <tr class="border-b border-gray-800 text-[#9CA3AF]">
+                <th class="py-3 px-3 whitespace-nowrap">Rank</th>
+                <th class="py-3 px-3 whitespace-nowrap">Climber</th>
+                <th class="py-3 px-3 text-center whitespace-nowrap">Routes</th>
+                <th class="py-3 px-3 text-center whitespace-nowrap hidden sm:table-cell">Highest Redpoint</th>
+                <th class="py-3 px-3 text-right whitespace-nowrap">Points</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-900">
+              <tr>
+                <td class="py-3 px-3 font-heading text-[#22D3EE]">#1</td>
+                <td class="py-3 px-3">
+                  <div class="flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-full bg-blue-500 text-[10px] text-white flex items-center justify-center font-heading shrink-0">A</span>
+                    <span class="whitespace-nowrap">Alex Honn</span>
+                  </div>
+                </td>
+                <td class="py-3 px-3 text-center">142</td>
+                <td class="py-3 px-3 text-center text-[#F59E0B] hidden sm:table-cell">V11 (5.14a)</td>
+                <td class="py-3 px-3 text-right text-[#22D3EE]">14,200</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 font-heading text-[#22D3EE]">#2</td>
+                <td class="py-3 px-3">
+                  <div class="flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-full bg-purple-500 text-[10px] text-white flex items-center justify-center font-heading shrink-0">E</span>
+                    <span class="whitespace-nowrap">Emily Harrop</span>
+                  </div>
+                </td>
+                <td class="py-3 px-3 text-center">119</td>
+                <td class="py-3 px-3 text-center text-[#F59E0B] hidden sm:table-cell">V10 (5.13d)</td>
+                <td class="py-3 px-3 text-right text-[#22D3EE]">11,900</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 font-heading text-[#22D3EE]">#3</td>
+                <td class="py-3 px-3">
+                  <div class="flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-full bg-green-500 text-[10px] text-white flex items-center justify-center font-heading shrink-0">T</span>
+                    <span class="whitespace-nowrap">Tommy Cald</span>
+                  </div>
+                </td>
+                <td class="py-3 px-3 text-center">98</td>
+                <td class="py-3 px-3 text-center text-[#F59E0B] hidden sm:table-cell">V10 (5.14b)</td>
+                <td class="py-3 px-3 text-right text-[#22D3EE]">10,800</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
       <!-- Right side: Sidebar events -->
-      <div class="lg:col-span-4 space-y-6">
-        <h2 class="text-2xl font-heading flex items-center gap-2">
+      <div class="lg:col-span-4 space-y-6 min-w-0 w-full">
+        <h2 class="text-xl sm:text-2xl font-heading flex items-center gap-2">
           <i class="fa-solid fa-calendar text-[#3B82F6]"></i>
           Upcoming Meetups
         </h2>
@@ -217,16 +218,17 @@
           <div class="glass-panel p-4 rounded-xl space-y-2">
             <span class="text-[10px] bg-[#3B82F6]/20 text-[#3B82F6] px-2 py-0.5 rounded uppercase">Social</span>
             <h4 class="text-sm font-heading">Route Setting Night</h4>
-            <p class="text-[11px] text-[#9CA3AF]"><i class="fa-solid fa-clock mr-1"></i>June 28 • 18:00</p>
+            <p class="text-xs text-[#9CA3AF]"><i class="fa-solid fa-clock mr-1"></i>June 28 • 18:00</p>
           </div>
           <div class="glass-panel p-4 rounded-xl space-y-2">
             <span class="text-[10px] bg-[#22D3EE]/20 text-[#22D3EE] px-2 py-0.5 rounded uppercase">Clinic</span>
             <h4 class="text-sm font-heading">Dyno Mastery Workshop</h4>
-            <p class="text-[11px] text-[#9CA3AF]"><i class="fa-solid fa-clock mr-1"></i>July 04 • 14:00</p>
+            <p class="text-xs text-[#9CA3AF]"><i class="fa-solid fa-clock mr-1"></i>July 04 • 14:00</p>
           </div>
         </div>
       </div>
     </section>
+
 
     <!-- Photo Gallery Grid -->
     <section class="py-12 border-t border-gray-900" data-aos="fade-up">
@@ -291,25 +293,25 @@
       <div class="lg:col-span-7 space-y-6">
         <span class="text-xs uppercase tracking-widest text-[#22D3EE] font-heading">Stewardship</span>
         <h2 class="text-3xl font-heading">Crag Preservation Projects</h2>
-        <p class="text-[#D1D5DB] text-sm leading-relaxed">
+        <p class="text-[#D1D5DB] text-base leading-relaxed">
           We believe in protecting the real-world rock systems that inspire our indoor routes. SummitX partners with the
           Colorado Climbing Coalition to organize monthly trail maintenance, chalk removal, and bolt safety inspections
           at popular local bouldering sectors.
         </p>
-        <div class="grid grid-cols-2 gap-4 text-xs text-[#9CA3AF]">
+        <div class="grid grid-cols-2 gap-4 text-sm text-[#9CA3AF]">
           <div class="space-y-1">
-            <h4 class="font-heading text-white">Trail Restoration</h4>
-            <p class="text-[11px]">Building stone steps and clearing erosion paths to prevent damage to local
+            <h4 class="font-heading text-white text-base">Trail Restoration</h4>
+            <p class="text-xs">Building stone steps and clearing erosion paths to prevent damage to local
               vegetation.</p>
           </div>
           <div class="space-y-1">
-            <h4 class="font-heading text-white">Hardware Inspections</h4>
-            <p class="text-[11px]">Replacing worn anchor setups and checking standard expansion bolts on popular routes.
+            <h4 class="font-heading text-white text-base">Hardware Inspections</h4>
+            <p class="text-xs">Replacing worn anchor setups and checking standard expansion bolts on popular routes.
             </p>
           </div>
         </div>
         <a href="contact.html"
-          class="px-6 py-2.5 rounded-full border border-[#22D3EE] text-[#22D3EE] text-xs font-medium inline-block hover:bg-[#22D3EE]/10 transition-colors">Volunteer
+          class="px-6 py-2.5 rounded-full bg-[#22D3EE] text-[#0B0F19] text-xs font-semibold inline-block hover:bg-[#22D3EE]/90 hover:scale-105 transition-all shadow-md shadow-[#22D3EE]/20">Volunteer
           to Help</a>
       </div>
     </section>

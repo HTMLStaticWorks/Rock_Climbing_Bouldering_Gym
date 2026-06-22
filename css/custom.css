@@ -278,6 +278,30 @@ button, .btn { font-weight: 500 !important; }
   color: var(--text-muted) !important;
 }
 
+[data-theme="light"] .text-\[\#22D3EE\] {
+  color: var(--secondary) !important;
+}
+
+[data-theme="light"] .hover\:text-\[\#22D3EE\]:hover {
+  color: var(--secondary) !important;
+}
+
+[data-theme="light"] .border-\[\#22D3EE\] {
+  border-color: var(--secondary) !important;
+}
+
+[data-theme="light"] .text-\[\#3B82F6\] {
+  color: var(--primary) !important;
+}
+
+[data-theme="light"] .hover\:text-\[\#3B82F6\]:hover {
+  color: var(--primary) !important;
+}
+
+[data-theme="light"] .border-\[\#3B82F6\] {
+  border-color: var(--primary) !important;
+}
+
 [data-theme="light"] .border-gray-800,
 [data-theme="light"] .border-gray-900,
 [data-theme="light"] .border-gray-850 {
@@ -340,52 +364,80 @@ nav a[href="register.html"]:hover,
   color: #FFFFFF !important;
 }
 
-/* Premium social icon hover effect */
+/* ============================================
+   Premium Social Icon Button — Dark & Light
+   ============================================ */
 .social-icon-btn {
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: 2.1rem;
+  height: 2.1rem;
   border-radius: 9999px;
-  border: 1px solid var(--card-border) !important;
-  color: var(--text-muted) !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  background-color: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Light mode resting state — make icons clearly visible */
+[data-theme="light"] .social-icon-btn {
+  border: 1.5px solid rgba(0, 0, 0, 0.18) !important;
+  color: rgba(0, 0, 0, 0.5) !important;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+/* Dark mode hover — generic fallback */
 .social-icon-btn:hover {
-  transform: translateY(-3px) scale(1.1);
+  transform: translateY(-4px) scale(1.12);
   color: #FFFFFF !important;
-  box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
-  border-color: var(--secondary) !important;
   background-color: var(--secondary) !important;
+  border-color: var(--secondary) !important;
+  box-shadow: 0 6px 20px rgba(34, 211, 238, 0.45), 0 0 0 3px rgba(34, 211, 238, 0.12);
 }
 
-/* Custom individual colors on hover */
+/* Light mode hover — keep white icon text legible */
+[data-theme="light"] .social-icon-btn:hover {
+  color: #FFFFFF !important;
+}
+
+/* ---- Per-platform branded hover colors ---- */
+
+/* Instagram */
 .social-icon-btn.instagram:hover {
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
   border-color: transparent !important;
-  box-shadow: 0 0 15px rgba(214, 36, 159, 0.5);
+  box-shadow: 0 6px 20px rgba(214, 36, 159, 0.5), 0 0 0 3px rgba(214, 36, 159, 0.12);
 }
 
+/* YouTube */
 .social-icon-btn.youtube:hover {
   background-color: #FF0000 !important;
   border-color: #FF0000 !important;
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.5), 0 0 0 3px rgba(255, 0, 0, 0.12);
 }
 
+/* Facebook */
 .social-icon-btn.facebook:hover {
   background-color: #1877F2 !important;
   border-color: #1877F2 !important;
-  box-shadow: 0 0 15px rgba(24, 119, 242, 0.5);
+  box-shadow: 0 6px 20px rgba(24, 119, 242, 0.5), 0 0 0 3px rgba(24, 119, 242, 0.12);
 }
 
+/* TikTok */
 .social-icon-btn.tiktok:hover {
-  background-color: #000000 !important;
-  border-color: #000000 !important;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
+  background-color: #010101 !important;
+  border-color: #69C9D0 !important;
+  box-shadow: 0 6px 20px rgba(105, 201, 208, 0.45), 0 0 0 3px rgba(105, 201, 208, 0.12);
 }
+
+/* Light mode TikTok needs white icon on dark bg */
+[data-theme="light"] .social-icon-btn.tiktok:hover {
+  color: #FFFFFF !important;
+}
+
 
 /* Responsive navigation bar styling at 1024px to 1279px (lg range) keeping items on one line with larger font size */
 @media (min-width: 1024px) and (max-width: 1279px) {
