@@ -82,15 +82,25 @@
         </div>
         <div>
           <label class="block text-[10px] uppercase tracking-widest text-[#9CA3AF] mb-1">Email address</label>
-          <input type="email" required placeholder="name@domain.com" value="" autocomplete="email" class="w-full px-4 py-2.5 rounded-xl bg-[#0B0F19]/60 border border-gray-800 text-white text-xs placeholder-gray-600 focus:outline-none neon-focus transition-all">
+          <input type="email" required placeholder="name@domain.com" autocomplete="email" class="w-full px-4 py-2.5 rounded-xl bg-[#0B0F19]/60 border border-gray-800 text-white text-xs placeholder-gray-600 focus:outline-none neon-focus transition-all">
         </div>
         <div>
           <label class="block text-[10px] uppercase tracking-widest text-[#9CA3AF] mb-1">Password</label>
-          <input id="reg-password" type="password" required placeholder="Enter your password" value="" autocomplete="new-password" class="w-full px-4 py-2.5 rounded-xl bg-[#0B0F19]/60 border border-gray-800 text-white text-xs placeholder-gray-600 focus:outline-none neon-focus transition-all">
+          <div class="relative">
+            <input id="reg-password" type="password" required placeholder="Enter your password" autocomplete="new-password" class="w-full px-4 py-2.5 rounded-xl bg-[#0B0F19]/60 border border-gray-800 text-white text-xs placeholder-gray-600 focus:outline-none neon-focus transition-all pr-10">
+            <button type="button" onclick="toggleRegPasswordVisibility('reg-password', 'reg-password-eye')" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition-colors text-xs">
+              <i id="reg-password-eye" class="fa-regular fa-eye"></i>
+            </button>
+          </div>
         </div>
         <div>
           <label class="block text-[10px] uppercase tracking-widest text-[#9CA3AF] mb-1">Confirm Password</label>
-          <input id="reg-confirm-password" type="password" required placeholder="Confirm your password" value="" autocomplete="new-password" class="w-full px-4 py-2.5 rounded-xl bg-[#0B0F19]/60 border border-gray-800 text-white text-xs placeholder-gray-600 focus:outline-none neon-focus transition-all">
+          <div class="relative">
+            <input id="reg-confirm-password" type="password" required placeholder="Confirm your password" autocomplete="new-password" class="w-full px-4 py-2.5 rounded-xl bg-[#0B0F19]/60 border border-gray-800 text-white text-xs placeholder-gray-600 focus:outline-none neon-focus transition-all pr-10">
+            <button type="button" onclick="toggleRegPasswordVisibility('reg-confirm-password', 'reg-confirm-password-eye')" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition-colors text-xs">
+              <i id="reg-confirm-password-eye" class="fa-regular fa-eye"></i>
+            </button>
+          </div>
         </div>
  
         <div class="flex items-start gap-2.5 text-[10px] text-[#9CA3AF] leading-relaxed">
@@ -114,10 +124,10 @@
         </div>
  
         <div class="grid grid-cols-2 gap-4">
-          <button onclick="location.href='dashboard.html';" class="py-2.5 rounded-xl border border-gray-800 hover:border-gray-650 transition-colors flex items-center justify-center gap-2 text-xs">
+          <button onclick="location.href='dashboard.html';" class="social-login-btn google-btn py-2.5 rounded-xl border border-gray-800 hover:border-gray-650 transition-colors flex items-center justify-center gap-2 text-xs">
             <i class="fa-brands fa-google text-red-500"></i> Google
           </button>
-          <button onclick="location.href='dashboard.html';" class="py-2.5 rounded-xl border border-gray-800 hover:border-gray-650 transition-colors flex items-center justify-center gap-2 text-xs">
+          <button onclick="location.href='dashboard.html';" class="social-login-btn apple-btn py-2.5 rounded-xl border border-gray-800 hover:border-gray-650 transition-colors flex items-center justify-center gap-2 text-xs">
             <i class="fa-brands fa-apple text-white"></i> Apple
           </button>
         </div>
@@ -132,6 +142,18 @@
   </main>
  
   <script>
+    function toggleRegPasswordVisibility(inputId, eyeId) {
+      const input = document.getElementById(inputId);
+      const eye = document.getElementById(eyeId);
+      if (input.type === 'password') {
+        input.type = 'text';
+        eye.className = 'fa-regular fa-eye-slash';
+      } else {
+        input.type = 'password';
+        eye.className = 'fa-regular fa-eye';
+      }
+    }
+
     function validatePasswords(event) {
       event.preventDefault();
       const password = document.getElementById('reg-password').value;
