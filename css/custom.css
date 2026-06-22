@@ -40,6 +40,15 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 110%;
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
+
+/* Enforce global container centering to prevent page layouts shifting left */
+.container {
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 body {
@@ -48,7 +57,8 @@ body {
   color: var(--text-primary);
   font-weight: 400;
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+  max-width: 100% !important;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -293,6 +303,19 @@ button[type="submit"]:hover,
   filter: brightness(1.1) !important;
 }
 
+/* Secondary Hero CTA Button Hover Effects */
+.btn-secondary-hero {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-secondary-hero:hover {
+  transform: translateY(-2px) scale(1.03) !important;
+  border-color: var(--primary) !important;
+  background-color: rgba(59, 130, 246, 0.1) !important;
+  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.2) !important;
+  color: var(--text-primary) !important;
+}
+
 /* Make RTL icon visible/brighter contrast in light mode */
 [data-theme="light"] #rtl-icon,
 [data-theme="light"] .fa-right-left,
@@ -316,5 +339,129 @@ nav a[href="register.html"]:hover,
   border-color: #2563EB !important;
   color: #FFFFFF !important;
 }
+
+/* Premium social icon hover effect */
+.social-icon-btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  border: 1px solid var(--card-border) !important;
+  color: var(--text-muted) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  background-color: transparent;
+}
+
+.social-icon-btn:hover {
+  transform: translateY(-3px) scale(1.1);
+  color: #FFFFFF !important;
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
+  border-color: var(--secondary) !important;
+  background-color: var(--secondary) !important;
+}
+
+/* Custom individual colors on hover */
+.social-icon-btn.instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
+  border-color: transparent !important;
+  box-shadow: 0 0 15px rgba(214, 36, 159, 0.5);
+}
+
+.social-icon-btn.youtube:hover {
+  background-color: #FF0000 !important;
+  border-color: #FF0000 !important;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+.social-icon-btn.facebook:hover {
+  background-color: #1877F2 !important;
+  border-color: #1877F2 !important;
+  box-shadow: 0 0 15px rgba(24, 119, 242, 0.5);
+}
+
+.social-icon-btn.tiktok:hover {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
+}
+
+/* Responsive navigation bar styling at 1024px to 1279px (lg range) keeping items on one line with larger font size */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  nav .container,
+  .navbar .container-fluid {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  
+  nav a.text-xl,
+  .navbar-brand {
+    font-size: 1.1rem !important;
+    gap: 0.25rem !important;
+  }
+
+  nav div.hidden.lg\:flex:first-of-type,
+  nav div.hidden.lg\:flex.items-center.gap-8,
+  .navbar div.hidden.lg\:flex {
+    gap: 0.6rem !important;
+  }
+
+  nav div.hidden.lg\:flex:first-of-type a,
+  nav div.hidden.lg\:flex.items-center.gap-8 a,
+  .navbar div.hidden.lg\:flex a {
+    font-size: 13.5px !important;
+  }
+
+  nav div.hidden.lg\:flex:last-of-type,
+  nav div.hidden.lg\:flex.items-center.gap-4 {
+    gap: 0.35rem !important;
+  }
+
+  nav div.hidden.lg\:flex:last-of-type a,
+  nav div.hidden.lg\:flex.items-center.gap-4 a,
+  nav div.hidden.lg\:flex:last-of-type button,
+  nav div.hidden.lg\:flex.items-center.gap-4 button {
+    font-size: 13px !important;
+    padding-left: 0.65rem !important;
+    padding-right: 0.65rem !important;
+  }
+
+  /* Make RTL and Theme toggle buttons smaller */
+  nav #rtl-toggle,
+  nav #theme-toggle,
+  .navbar #rtl-toggle,
+  .navbar #theme-toggle {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+
+  /* Make the icons inside them smaller */
+  nav #rtl-toggle i,
+  nav #theme-toggle i,
+  .navbar #rtl-toggle i,
+  .navbar #theme-toggle i {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* Make mobile hamburger menu scrollable on smaller screens */
+#mobile-menu {
+  max-height: calc(100vh - 75px) !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide back to top button when mobile menu is active/open to prevent overlapping */
+body:has(#mobile-menu:not(.hidden)) #back-to-top {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+
+
+
+
 
 

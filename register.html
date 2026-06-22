@@ -82,19 +82,22 @@
         </div>
         <div>
           <label class="block text-[10px] uppercase tracking-widest text-[#9CA3AF] mb-1">Email address</label>
-          <input type="email" required placeholder="name@domain.com" class="w-full px-4 py-2.5 rounded-xl bg-[#0B0F19]/60 border border-gray-800 text-white text-xs placeholder-gray-600 focus:outline-none neon-focus transition-all">
+          <input type="email" required placeholder="name@domain.com" value="" autocomplete="email" class="w-full px-4 py-2.5 rounded-xl bg-[#0B0F19]/60 border border-gray-800 text-white text-xs placeholder-gray-600 focus:outline-none neon-focus transition-all">
         </div>
         <div>
           <label class="block text-[10px] uppercase tracking-widest text-[#9CA3AF] mb-1">Password</label>
-          <input id="reg-password" type="password" required placeholder="Enter your password" class="w-full px-4 py-2.5 rounded-xl bg-[#0B0F19]/60 border border-gray-800 text-white text-xs placeholder-gray-600 focus:outline-none neon-focus transition-all">
+          <input id="reg-password" type="password" required placeholder="Enter your password" value="" autocomplete="new-password" class="w-full px-4 py-2.5 rounded-xl bg-[#0B0F19]/60 border border-gray-800 text-white text-xs placeholder-gray-600 focus:outline-none neon-focus transition-all">
         </div>
         <div>
           <label class="block text-[10px] uppercase tracking-widest text-[#9CA3AF] mb-1">Confirm Password</label>
-          <input id="reg-confirm-password" type="password" required placeholder="Confirm your password" class="w-full px-4 py-2.5 rounded-xl bg-[#0B0F19]/60 border border-gray-800 text-white text-xs placeholder-gray-600 focus:outline-none neon-focus transition-all">
+          <input id="reg-confirm-password" type="password" required placeholder="Confirm your password" value="" autocomplete="new-password" class="w-full px-4 py-2.5 rounded-xl bg-[#0B0F19]/60 border border-gray-800 text-white text-xs placeholder-gray-600 focus:outline-none neon-focus transition-all">
         </div>
  
-        <div class="text-[10px] text-[#9CA3AF] leading-relaxed">
-          By signing up, you agree to our <a href="#" class="text-[#22D3EE] hover:underline">Safety Liability Waiver</a> and <a href="#" class="text-[#22D3EE] hover:underline">Terms of Service</a>.
+        <div class="flex items-start gap-2.5 text-[10px] text-[#9CA3AF] leading-relaxed">
+          <input type="checkbox" required id="terms-checkbox" class="mt-0.5 rounded bg-[#0B0F19] border-gray-800 text-[#3B82F6] focus:ring-0 cursor-pointer">
+          <label for="terms-checkbox" class="cursor-pointer select-none">
+            I agree to the <a href="#" class="text-[#22D3EE] hover:underline">Safety Liability Waiver</a> and <a href="#" class="text-[#22D3EE] hover:underline">Terms of Service</a>.
+          </label>
         </div>
  
         <button type="submit" class="w-full py-3 rounded-xl bg-[#3B82F6] hover:bg-[#3B82F6]/90 transition-all font-medium text-xs uppercase tracking-wider">
