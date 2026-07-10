@@ -5,9 +5,9 @@
   --bg-color: #0B0F19;
   --card-bg: rgba(17, 24, 39, 0.7);
   --card-bg-solid: #111827;
-  --card-border: rgba(255, 255, 255, 0.08);
+  --card-border: rgba(255, 255, 255, 0.22);
   --primary: #3B82F6;
-  --secondary: #22D3EE;
+  --secondary: #3B82F6; /* Enforce primary blue consistently */
   --accent: #F59E0B;
   --text-primary: #F3F4F6;
   --text-secondary: #D1D5DB;
@@ -19,16 +19,47 @@
 
 /* Light Mode Overrides */
 [data-theme="light"] {
-  --bg-color: #F9FAFB;
-  --card-bg: rgba(243, 244, 246, 0.7);
+  --bg-color: #F8FAFC;
+  --card-bg: rgba(255, 255, 255, 0.55);
   --card-bg-solid: #FFFFFF;
-  --card-border: rgba(0, 0, 0, 0.08);
+  --card-border: rgba(0, 0, 0, 0.05);
   --primary: #2563EB;
-  --secondary: #0891B2;
+  --secondary: #2563EB; /* Enforce primary blue consistently */
   --accent: #D97706;
   --text-primary: #111827;
   --text-secondary: #374151;
   --text-muted: #6B7280;
+}
+
+/* Force color consistency for hardcoded Tailwind cyan (#22D3EE) classes */
+.text-\[\#22D3EE\],
+.hover\:text-\[\#22D3EE\]:hover,
+[data-theme="light"] .text-\[\#22D3EE\],
+[data-theme="light"] .hover\:text-\[\#22D3EE\]:hover {
+  color: var(--primary) !important;
+}
+.border-\[\#22D3EE\],
+[data-theme="light"] .border-\[\#22D3EE\] {
+  border-color: var(--primary) !important;
+}
+
+/* Dark Mode visibility overrides for containers and input fields */
+html[data-theme="dark"] .border-gray-800,
+html[data-theme="dark"] .border-gray-900,
+html[data-theme="dark"] .border-gray-850,
+:root:not([data-theme="light"]) .border-gray-800,
+:root:not([data-theme="light"]) .border-gray-900,
+:root:not([data-theme="light"]) .border-gray-850 {
+  border-color: rgba(255, 255, 255, 0.22) !important;
+}
+
+html[data-theme="dark"] input,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select,
+:root:not([data-theme="light"]) input,
+:root:not([data-theme="light"]) textarea,
+:root:not([data-theme="light"]) select {
+  border-color: rgba(255, 255, 255, 0.25) !important;
 }
 
 /* Global Reset & Base */
@@ -315,6 +346,7 @@ button.bg-\[\#3B82F6\],
 button[type="submit"],
 .glow-btn-primary {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  color: #FFFFFF !important;
 }
 
 a[href="register.html"]:hover,
@@ -346,6 +378,22 @@ button[type="submit"]:hover,
 [data-theme="light"] #rtl-toggle i,
 [data-theme="light"] #rtl-toggle-mobile i {
   color: var(--text-secondary) !important;
+}
+
+/* Fix header contrast issue in controls while hovering in Light Mode */
+[data-theme="light"] #rtl-toggle:hover,
+[data-theme="light"] #theme-toggle:hover,
+[data-theme="light"] #rtl-toggle-mobile:hover,
+[data-theme="light"] #theme-toggle-mobile:hover {
+  background-color: rgba(0, 0, 0, 0.08) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+[data-theme="light"] #rtl-toggle:hover i,
+[data-theme="light"] #theme-toggle:hover i,
+[data-theme="light"] #rtl-toggle-mobile:hover i,
+[data-theme="light"] #theme-toggle-mobile:hover i {
+  color: var(--text-primary) !important;
 }
 
 /* Enforce Solid Blue Background & White Text for Sign Up button in both themes */
@@ -534,4 +582,36 @@ body:has(#mobile-menu:not(.hidden)) #back-to-top {
   background-color: rgba(0, 0, 0, 0.06) !important;
   border-color: rgba(0, 0, 0, 0.25) !important;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Interactive Progression Guide styles */
+.progression-step-btn {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 10;
+}
+.progression-step-btn.active {
+  background-color: var(--primary) !important;
+  color: #FFFFFF !important;
+  border-color: var(--secondary) !important;
+  transform: scale(1.15);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.6), 0 0 0 4px rgba(34, 211, 238, 0.2);
+}
+.progression-step-btn:hover:not(.active) {
+  border-color: var(--secondary) !important;
+  color: var(--text-primary) !important;
+  transform: translateY(-2px);
+}
+[data-theme="light"] .progression-step-btn {
+  background-color: var(--card-bg-solid) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+  color: var(--text-muted) !important;
+}
+[data-theme="light"] .progression-step-btn.active {
+  background-color: var(--primary) !important;
+  color: #FFFFFF !important;
+  border-color: var(--primary) !important;
+}
+.progression-detail-card {
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }

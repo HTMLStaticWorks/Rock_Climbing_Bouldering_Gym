@@ -305,104 +305,288 @@
     </div>
   </section>
 
-  <!-- 3. Climbing Journey (Interactive Timeline) -->
-  <section class="py-24 bg-[#0B0F19] relative">
-    <div class="container max-w-7xl mx-auto px-4">
+  <!-- 3. Climbing Journey (Interactive Timeline Redesigned) -->
+  <section class="py-24 bg-[#0B0F19] relative overflow-hidden">
+    <!-- Subtle Background Glows -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-[#3B82F6]/10 to-[#22D3EE]/10 rounded-full blur-[150px] pointer-events-none"></div>
+
+    <div class="container max-w-7xl mx-auto px-4 relative z-10">
       <div class="text-center space-y-3 mb-16" data-aos="fade-up">
         <span class="text-xs uppercase tracking-widest text-[#22D3EE] font-heading">Progression Guide</span>
         <h2 class="text-3xl md:text-4xl font-heading">Your Climbing Journey</h2>
-        <p class="text-[#9CA3AF] max-w-xl mx-auto">Map your ascension journey from day one through our structured grade
-          levels and coach-designed checkpoints.</p>
+        <p class="text-[#9CA3AF] max-w-xl mx-auto">Map your ascension journey from day one through our structured grade levels and coach-designed checkpoints.</p>
       </div>
 
-      <!-- Timeline Wrapper -->
-      <div class="relative flex flex-col items-center">
-        <!-- Connecting Line -->
-        <div
-          class="absolute left-4 md:left-1/2 -translate-x-1/2 w-[2px] h-full bg-gradient-to-b from-[#3B82F6] to-gray-800">
+      <!-- Interactive Progress Navigation Bar -->
+      <div class="max-w-4xl mx-auto mb-16 relative px-4" data-aos="fade-up">
+        <div class="relative flex items-center justify-between">
+          <!-- Background progress track line -->
+          <div class="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-[4px] bg-gray-800 rounded-full z-0">
+            <!-- Active progress bar -->
+            <div id="active-progress-line" class="h-full bg-gradient-to-r from-[#3B82F6] to-[#22D3EE] rounded-full transition-all duration-500" style="width: 0%;"></div>
+          </div>
+
+          <!-- Step Buttons -->
+          <button onclick="selectProgressionStep(1)" class="progression-step-btn w-12 h-12 rounded-full bg-[#111827] border-2 border-gray-700 hover:border-[#22D3EE] flex items-center justify-center font-heading text-sm text-[#9CA3AF] active" id="prog-btn-1">
+            <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] uppercase tracking-wider font-medium hidden md:block">Beginner</span>
+            1
+          </button>
+          <button onclick="selectProgressionStep(2)" class="progression-step-btn w-12 h-12 rounded-full bg-[#111827] border-2 border-gray-700 hover:border-[#22D3EE] flex items-center justify-center font-heading text-sm text-[#9CA3AF]" id="prog-btn-2">
+            <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] uppercase tracking-wider font-medium hidden md:block">Intermediate</span>
+            2
+          </button>
+          <button onclick="selectProgressionStep(3)" class="progression-step-btn w-12 h-12 rounded-full bg-[#111827] border-2 border-gray-700 hover:border-[#22D3EE] flex items-center justify-center font-heading text-sm text-[#9CA3AF]" id="prog-btn-3">
+            <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] uppercase tracking-wider font-medium hidden md:block">Advanced</span>
+            3
+          </button>
+          <button onclick="selectProgressionStep(4)" class="progression-step-btn w-12 h-12 rounded-full bg-[#111827] border-2 border-gray-700 hover:border-[#22D3EE] flex items-center justify-center font-heading text-sm text-[#9CA3AF]" id="prog-btn-4">
+            <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] uppercase tracking-wider font-medium hidden md:block">Athlete</span>
+            4
+          </button>
+          <button onclick="selectProgressionStep(5)" class="progression-step-btn w-12 h-12 rounded-full bg-[#111827] border-2 border-gray-700 hover:border-[#22D3EE] flex items-center justify-center font-heading text-sm text-[#9CA3AF]" id="prog-btn-5">
+            <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] uppercase tracking-wider font-medium hidden md:block">Elite</span>
+            5
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Step Detail Showcase Cards -->
+      <div class="max-w-4xl mx-auto mt-20" data-aos="fade-up" data-aos-delay="200">
+        <!-- Card 1: Beginner -->
+        <div id="prog-card-1" class="progression-detail-card glass-panel p-8 rounded-3xl grid md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-7 space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="px-3 py-1 rounded-full bg-[#3B82F6]/20 text-[#3B82F6] text-xs font-heading">Step 1</span>
+              <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-medium">V0 - V2</span>
+            </div>
+            <h3 class="text-2xl md:text-3xl font-heading text-[#F3F4F6]">Beginner</h3>
+            <p class="text-[#D1D5DB] text-sm leading-relaxed">
+              Learn basic footwork, hand holds (jugs, crimps), and essential safety procedures using auto-belays. This step focuses on establishing body balance and orientation on the wall.
+            </p>
+            <div class="space-y-2 pt-2">
+              <h4 class="text-xs uppercase tracking-widest text-[#22D3EE] font-heading">Key Focus Checklist</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#9CA3AF]">
+                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Basic footwork placement</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Auto-belay certified</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Identifying hold types</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Safety and falling technique</div>
+              </div>
+            </div>
+          </div>
+          <div class="md:col-span-5 space-y-4 bg-[#0B0F19]/50 p-6 rounded-2xl border border-gray-800">
+            <h4 class="text-xs uppercase tracking-widest text-[#F3F4F6] font-heading">Target Skill Metrics</h4>
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-[11px] text-[#9CA3AF] mb-1"><span>Finger Strength</span><span>30%</span></div>
+                <div class="w-full bg-gray-850 h-1.5 rounded-full overflow-hidden"><div class="bg-[#3B82F6] h-full rounded-full" style="width: 30%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-[11px] text-[#9CA3AF] mb-1"><span>Core Tension / Balance</span><span>60%</span></div>
+                <div class="w-full bg-gray-850 h-1.5 rounded-full overflow-hidden"><div class="bg-[#3B82F6] h-full rounded-full" style="width: 60%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-[11px] text-[#9CA3AF] mb-1"><span>Endurance</span><span>40%</span></div>
+                <div class="w-full bg-gray-850 h-1.5 rounded-full overflow-hidden"><div class="bg-[#3B82F6] h-full rounded-full" style="width: 40%"></div></div>
+              </div>
+            </div>
+            <a href="register.html" class="block text-center py-2.5 rounded-xl bg-[#3B82F6]/20 hover:bg-[#3B82F6] text-[#3B82F6] hover:text-white transition-all text-xs font-medium uppercase tracking-wider mt-4">Start Training</a>
+          </div>
         </div>
 
-        <!-- Node 1 -->
-        <div class="relative w-full grid grid-cols-1 md:grid-cols-2 items-center mb-16" data-aos="fade-right">
-          <div class="pl-8 md:pl-0 md:text-right md:pr-12 space-y-2">
-            <span class="px-3 py-1 rounded-full bg-[#3B82F6]/20 text-[#3B82F6] text-xs font-heading">Step 1</span>
-            <h3 class="text-xl font-heading">Beginner (V0 - V2)</h3>
-            <p class="text-sm text-[#D1D5DB] md:ml-auto max-w-md">Learn basic footwork, hand holds (jugs, crimps), and
-              essential safety procedures using auto-belays.</p>
+        <!-- Card 2: Intermediate -->
+        <div id="prog-card-2" class="progression-detail-card glass-panel p-8 rounded-3xl grid md:grid-cols-12 gap-8 items-center hidden">
+          <div class="md:col-span-7 space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="px-3 py-1 rounded-full bg-[#3B82F6]/20 text-[#3B82F6] text-xs font-heading">Step 2</span>
+              <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-medium">V3 - V5</span>
+            </div>
+            <h3 class="text-2xl md:text-3xl font-heading text-[#F3F4F6]">Intermediate</h3>
+            <p class="text-[#D1D5DB] text-sm leading-relaxed">
+              Master dynamic movements, drop-knees, route-reading tactics, and initiate standard lead-climbing safety checks. Start focusing on more complex pathing.
+            </p>
+            <div class="space-y-2 pt-2">
+              <h4 class="text-xs uppercase tracking-widest text-[#22D3EE] font-heading">Key Focus Checklist</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#9CA3AF]">
+                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Drop-knees & flags</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Dynamic movements</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Lead-climbing checks</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Beta reading / route planning</div>
+              </div>
+            </div>
           </div>
-          <div class="hidden md:flex justify-start pl-12">
-            <span
-              class="w-6 h-6 rounded-full bg-[#3B82F6] border-4 border-[#0B0F19] z-10 shadow-lg shadow-[#3B82F6]/50"></span>
+          <div class="md:col-span-5 space-y-4 bg-[#0B0F19]/50 p-6 rounded-2xl border border-gray-800">
+            <h4 class="text-xs uppercase tracking-widest text-[#F3F4F6] font-heading">Target Skill Metrics</h4>
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-[11px] text-[#9CA3AF] mb-1"><span>Finger Strength</span><span>55%</span></div>
+                <div class="w-full bg-gray-850 h-1.5 rounded-full overflow-hidden"><div class="bg-[#3B82F6] h-full rounded-full" style="width: 55%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-[11px] text-[#9CA3AF] mb-1"><span>Core Tension / Balance</span><span>70%</span></div>
+                <div class="w-full bg-gray-850 h-1.5 rounded-full overflow-hidden"><div class="bg-[#3B82F6] h-full rounded-full" style="width: 70%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-[11px] text-[#9CA3AF] mb-1"><span>Endurance</span><span>60%</span></div>
+                <div class="w-full bg-gray-850 h-1.5 rounded-full overflow-hidden"><div class="bg-[#3B82F6] h-full rounded-full" style="width: 60%"></div></div>
+              </div>
+            </div>
+            <a href="register.html" class="block text-center py-2.5 rounded-xl bg-[#3B82F6]/20 hover:bg-[#3B82F6] text-[#3B82F6] hover:text-white transition-all text-xs font-medium uppercase tracking-wider mt-4">Start Training</a>
           </div>
-          <!-- Mobile Dot -->
-          <span class="absolute left-4 -translate-x-1/2 w-4 h-4 rounded-full bg-[#3B82F6] border-2 border-[#0B0F19] z-10 md:hidden"></span>
         </div>
 
-        <!-- Node 2 -->
-        <div class="relative w-full grid grid-cols-1 md:grid-cols-2 items-center mb-16" data-aos="fade-left">
-          <div class="hidden md:flex justify-end pr-12">
-            <span
-              class="w-6 h-6 rounded-full bg-[#3B82F6] border-4 border-[#0B0F19] z-10 shadow-lg shadow-[#3B82F6]/50"></span>
+        <!-- Card 3: Advanced -->
+        <div id="prog-card-3" class="progression-detail-card glass-panel p-8 rounded-3xl grid md:grid-cols-12 gap-8 items-center hidden">
+          <div class="md:col-span-7 space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="px-3 py-1 rounded-full bg-[#3B82F6]/20 text-[#3B82F6] text-xs font-heading">Step 3</span>
+              <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-medium">V6 - V8</span>
+            </div>
+            <h3 class="text-2xl md:text-3xl font-heading text-[#F3F4F6]">Advanced</h3>
+            <p class="text-[#D1D5DB] text-sm leading-relaxed">
+              Train climbing-specific core tension, contact strength on micro-crimps, and complex dynamic beta configurations. You'll work with coaches on targeted fingerboard training.
+            </p>
+            <div class="space-y-2 pt-2">
+              <h4 class="text-xs uppercase tracking-widest text-[#22D3EE] font-heading">Key Focus Checklist</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#9CA3AF]">
+                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Micro-crimp contact strength</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Board climbing mastery</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Fingerboard hanging sessions</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Complex dynamic beta</div>
+              </div>
+            </div>
           </div>
-          <div class="pl-8 md:pl-12 space-y-2">
-            <span class="px-3 py-1 rounded-full bg-[#3B82F6]/20 text-[#3B82F6] text-xs font-heading">Step 2</span>
-            <h3 class="text-xl font-heading">Intermediate (V3 - V5)</h3>
-            <p class="text-sm text-[#D1D5DB] max-w-md">Master dynamic movements, drop-knees, route-reading tactics, and
-              initiate standard lead-climbing safety checks.</p>
+          <div class="md:col-span-5 space-y-4 bg-[#0B0F19]/50 p-6 rounded-2xl border border-gray-800">
+            <h4 class="text-xs uppercase tracking-widest text-[#F3F4F6] font-heading">Target Skill Metrics</h4>
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-[11px] text-[#9CA3AF] mb-1"><span>Finger Strength</span><span>75%</span></div>
+                <div class="w-full bg-gray-850 h-1.5 rounded-full overflow-hidden"><div class="bg-[#3B82F6] h-full rounded-full" style="width: 75%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-[11px] text-[#9CA3AF] mb-1"><span>Core Tension / Balance</span><span>80%</span></div>
+                <div class="w-full bg-gray-850 h-1.5 rounded-full overflow-hidden"><div class="bg-[#3B82F6] h-full rounded-full" style="width: 80%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-[11px] text-[#9CA3AF] mb-1"><span>Endurance</span><span>75%</span></div>
+                <div class="w-full bg-gray-850 h-1.5 rounded-full overflow-hidden"><div class="bg-[#3B82F6] h-full rounded-full" style="width: 75%"></div></div>
+              </div>
+            </div>
+            <a href="register.html" class="block text-center py-2.5 rounded-xl bg-[#3B82F6]/20 hover:bg-[#3B82F6] text-[#3B82F6] hover:text-white transition-all text-xs font-medium uppercase tracking-wider mt-4">Start Training</a>
           </div>
-          <!-- Mobile Dot -->
-          <span class="absolute left-4 -translate-x-1/2 w-4 h-4 rounded-full bg-[#3B82F6] border-2 border-[#0B0F19] z-10 md:hidden"></span>
         </div>
 
-        <!-- Node 3 -->
-        <div class="relative w-full grid grid-cols-1 md:grid-cols-2 items-center mb-16" data-aos="fade-right">
-          <div class="pl-8 md:pl-0 md:text-right md:pr-12 space-y-2">
-            <span class="px-3 py-1 rounded-full bg-[#3B82F6]/20 text-[#3B82F6] text-xs font-heading">Step 3</span>
-            <h3 class="text-xl font-heading">Advanced (V6 - V8)</h3>
-            <p class="text-sm text-[#D1D5DB] md:ml-auto max-w-md">Train climbing-specific core tension, contact strength
-              on micro-crimps, and complex dynamic beta configurations.</p>
+        <!-- Card 4: Competition Athlete -->
+        <div id="prog-card-4" class="progression-detail-card glass-panel p-8 rounded-3xl grid md:grid-cols-12 gap-8 items-center hidden">
+          <div class="md:col-span-7 space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="px-3 py-1 rounded-full bg-[#3B82F6]/20 text-[#3B82F6] text-xs font-heading">Step 4</span>
+              <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-medium">V8 - V10</span>
+            </div>
+            <h3 class="text-2xl md:text-3xl font-heading text-[#F3F4F6]">Competition Athlete</h3>
+            <p class="text-[#D1D5DB] text-sm leading-relaxed">
+              Develop lightning-fast route adaptations, high-intensity endurance blocks, and psychological competition preparation routines under simulated tournament pressure.
+            </p>
+            <div class="space-y-2 pt-2">
+              <h4 class="text-xs uppercase tracking-widest text-[#22D3EE] font-heading">Key Focus Checklist</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#9CA3AF]">
+                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Fast route adaptation</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Comp-style slab coordinates</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> High-intensity lead endurance</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Psychological pressure prep</div>
+              </div>
+            </div>
           </div>
-          <div class="hidden md:flex justify-start pl-12">
-            <span
-              class="w-6 h-6 rounded-full bg-[#3B82F6] border-4 border-[#0B0F19] z-10 shadow-lg shadow-[#3B82F6]/50"></span>
+          <div class="md:col-span-5 space-y-4 bg-[#0B0F19]/50 p-6 rounded-2xl border border-gray-800">
+            <h4 class="text-xs uppercase tracking-widest text-[#F3F4F6] font-heading">Target Skill Metrics</h4>
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-[11px] text-[#9CA3AF] mb-1"><span>Finger Strength</span><span>85%</span></div>
+                <div class="w-full bg-gray-850 h-1.5 rounded-full overflow-hidden"><div class="bg-[#3B82F6] h-full rounded-full" style="width: 85%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-[11px] text-[#9CA3AF] mb-1"><span>Core Tension / Balance</span><span>90%</span></div>
+                <div class="w-full bg-gray-850 h-1.5 rounded-full overflow-hidden"><div class="bg-[#3B82F6] h-full rounded-full" style="width: 90%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-[11px] text-[#9CA3AF] mb-1"><span>Endurance</span><span>85%</span></div>
+                <div class="w-full bg-gray-850 h-1.5 rounded-full overflow-hidden"><div class="bg-[#3B82F6] h-full rounded-full" style="width: 85%"></div></div>
+              </div>
+            </div>
+            <a href="register.html" class="block text-center py-2.5 rounded-xl bg-[#3B82F6]/20 hover:bg-[#3B82F6] text-[#3B82F6] hover:text-white transition-all text-xs font-medium uppercase tracking-wider mt-4">Start Training</a>
           </div>
-          <!-- Mobile Dot -->
-          <span class="absolute left-4 -translate-x-1/2 w-4 h-4 rounded-full bg-[#3B82F6] border-2 border-[#0B0F19] z-10 md:hidden"></span>
         </div>
 
-        <!-- Node 4 -->
-        <div class="relative w-full grid grid-cols-1 md:grid-cols-2 items-center mb-16" data-aos="fade-left">
-          <div class="hidden md:flex justify-end pr-12">
-            <span
-              class="w-6 h-6 rounded-full bg-[#3B82F6] border-4 border-[#0B0F19] z-10 shadow-lg shadow-[#3B82F6]/50"></span>
+        <!-- Card 5: Elite Level -->
+        <div id="prog-card-5" class="progression-detail-card glass-panel p-8 rounded-3xl grid md:grid-cols-12 gap-8 items-center hidden">
+          <div class="md:col-span-7 space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="px-3 py-1 rounded-full bg-[#3B82F6]/20 text-[#3B82F6] text-xs font-heading">Step 5</span>
+              <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-medium">V10+</span>
+            </div>
+            <h3 class="text-2xl md:text-3xl font-heading text-[#F3F4F6]">Elite Level</h3>
+            <p class="text-[#D1D5DB] text-sm leading-relaxed">
+              Push limits on custom overhung boards, log competitive results nationally, and participate in pro-level setting workshops with international setting crews.
+            </p>
+            <div class="space-y-2 pt-2">
+              <h4 class="text-xs uppercase tracking-widest text-[#22D3EE] font-heading">Key Focus Checklist</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#9CA3AF]">
+                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Overhung board mastery</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> National competitive logging</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> Pro-level setting workshops</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> High-risk dynamics</div>
+              </div>
+            </div>
           </div>
-          <div class="pl-8 md:pl-12 space-y-2">
-            <span class="px-3 py-1 rounded-full bg-[#3B82F6]/20 text-[#3B82F6] text-xs font-heading">Step 4</span>
-            <h3 class="text-xl font-heading">Competition Athlete</h3>
-            <p class="text-sm text-[#D1D5DB] max-w-md">Develop lightning-fast route adaptations, high-intensity
-              endurance blocks, and psychological comp prep routines.</p>
+          <div class="md:col-span-5 space-y-4 bg-[#0B0F19]/50 p-6 rounded-2xl border border-gray-800">
+            <h4 class="text-xs uppercase tracking-widest text-[#F3F4F6] font-heading">Target Skill Metrics</h4>
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-[11px] text-[#9CA3AF] mb-1"><span>Finger Strength</span><span>98%</span></div>
+                <div class="w-full bg-gray-850 h-1.5 rounded-full overflow-hidden"><div class="bg-[#3B82F6] h-full rounded-full" style="width: 98%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-[11px] text-[#9CA3AF] mb-1"><span>Core Tension / Balance</span><span>98%</span></div>
+                <div class="w-full bg-gray-850 h-1.5 rounded-full overflow-hidden"><div class="bg-[#3B82F6] h-full rounded-full" style="width: 98%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-[11px] text-[#9CA3AF] mb-1"><span>Endurance</span><span>95%</span></div>
+                <div class="w-full bg-gray-850 h-1.5 rounded-full overflow-hidden"><div class="bg-[#3B82F6] h-full rounded-full" style="width: 95%"></div></div>
+              </div>
+            </div>
+            <a href="register.html" class="block text-center py-2.5 rounded-xl bg-[#3B82F6]/20 hover:bg-[#3B82F6] text-[#3B82F6] hover:text-white transition-all text-xs font-medium uppercase tracking-wider mt-4">Start Training</a>
           </div>
-          <!-- Mobile Dot -->
-          <span class="absolute left-4 -translate-x-1/2 w-4 h-4 rounded-full bg-[#3B82F6] border-2 border-[#0B0F19] z-10 md:hidden"></span>
-        </div>
-
-        <!-- Node 5 -->
-        <div class="relative w-full grid grid-cols-1 md:grid-cols-2 items-center" data-aos="fade-up">
-          <div class="pl-8 md:pl-0 md:text-right md:pr-12 space-y-2">
-            <span class="px-3 py-1 rounded-full bg-[#3B82F6]/20 text-[#3B82F6] text-xs font-heading">Step 5</span>
-            <h3 class="text-xl font-heading">Elite Level (V10+)</h3>
-            <p class="text-sm text-[#D1D5DB] md:ml-auto max-w-md">Push limits on custom overhung boards, log competitive
-              results nationally, and participate in pro-level setting workshops.</p>
-          </div>
-          <div class="hidden md:flex justify-start pl-12">
-            <span
-              class="w-6 h-6 rounded-full bg-[#3B82F6] border-4 border-[#0B0F19] z-10 shadow-lg shadow-[#3B82F6]/50"></span>
-          </div>
-          <!-- Mobile Dot -->
-          <span class="absolute left-4 -translate-x-1/2 w-4 h-4 rounded-full bg-[#3B82F6] border-2 border-[#0B0F19] z-10 md:hidden"></span>
         </div>
       </div>
     </div>
+
+    <!-- JS for Interactive tab controls -->
+    <script>
+      function selectProgressionStep(stepNum) {
+        // Update active class on buttons
+        document.querySelectorAll('.progression-step-btn').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        document.getElementById('prog-btn-' + stepNum).classList.add('active');
+
+        // Update active progress bar width
+        // 0% for Step 1, 25% for Step 2, 50% for Step 3, 75% for Step 4, 100% for Step 5
+        const pct = (stepNum - 1) * 25;
+        document.getElementById('active-progress-line').style.width = pct + '%';
+
+        // Toggle card visibility with transition
+        document.querySelectorAll('.progression-detail-card').forEach(card => {
+          card.classList.add('hidden');
+        });
+        
+        const activeCard = document.getElementById('prog-card-' + stepNum);
+        activeCard.classList.remove('hidden');
+      }
+      
+      // Initialize state on page load
+      document.addEventListener('DOMContentLoaded', () => {
+        selectProgressionStep(1);
+      });
+    </script>
   </section>
 
   <!-- 5. Coaching Programs -->
@@ -546,15 +730,19 @@
 
   <!-- 7. Testimonials (Bootstrap Carousel inside Glass Panel) -->
   <section class="py-24 bg-[#0B0F19]">
-    <div class="container max-w-3xl mx-auto px-4 text-center">
-      <span class="text-xs uppercase tracking-widest text-[#22D3EE] font-heading mb-3 block">Member Stories</span>
+    <div class="container max-w-4xl mx-auto px-4">
+      <div class="text-center space-y-3 mb-16" data-aos="fade-up">
+        <span class="text-xs uppercase tracking-widest text-[#22D3EE] font-heading">Member Stories</span>
+        <h2 class="text-3xl md:text-4xl font-heading text-[#F3F4F6]">Real Climbers, Real Breakthroughs</h2>
+        <p class="text-[#9CA3AF] max-w-xl mx-auto">Hear how members of the SummitX community overcame training plateaus, mastered lead climbing, and pushed their limits.</p>
+      </div>
 
       <!-- Bootstrap Carousel Glass Box -->
-      <div id="testimonialCarousel" class="carousel slide glass-panel p-8 md:p-12 rounded-3xl" data-bs-ride="carousel"
+      <div id="testimonialCarousel" class="carousel slide glass-panel p-8 md:p-12 rounded-3xl max-w-3xl mx-auto" data-bs-ride="carousel"
         data-aos="zoom-in">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <p class="text-lg md:text-xl text-[#D1D5DB] font-light italic">
+            <p class="text-lg md:text-xl text-[#D1D5DB] font-light italic text-center">
               "SummitX completely transformed how I approach training. The route logs on the member dashboard let me
               trace grade improvements and master my technique plateaus."
             </p>
@@ -564,7 +752,7 @@
             </div>
           </div>
           <div class="carousel-item">
-            <p class="text-lg md:text-xl text-[#D1D5DB] font-light italic">
+            <p class="text-lg md:text-xl text-[#D1D5DB] font-light italic text-center">
               "The coaching team here is outstanding. From customized fingerboard templates to video-based feedback,
               they helped me secure my first V10 redpoint."
             </p>
@@ -580,6 +768,47 @@
         <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
           <i class="fa-solid fa-chevron-right text-xl text-gray-500 hover:text-white"></i>
         </button>
+      </div>
+
+      <!-- Relevant Endless Scrolling Marquee below it -->
+      <div class="relative w-full mt-16 py-6 bg-[#111827]/30 border-y border-gray-800/60 overflow-hidden" data-aos="fade-up">
+        <div class="w-full flex items-center relative">
+          <div class="animate-marquee gap-12 items-center flex">
+            <!-- Marquee items -->
+            <span class="text-xs tracking-wider text-[#22D3EE] font-medium bg-[#3B82F6]/10 px-4 py-2 rounded-full whitespace-nowrap flex items-center gap-2">
+              <i class="fa-solid fa-trophy text-amber-500"></i> Marc Chen: "Broke my V8 plateau!"
+            </span>
+            <span class="text-xs tracking-wider text-[#F3F4F6] font-medium bg-white/5 px-4 py-2 rounded-full whitespace-nowrap flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-emerald-400"></i> Elena Rostova: "Custom fingerboard plan is elite."
+            </span>
+            <span class="text-xs tracking-wider text-[#22D3EE] font-medium bg-[#3B82F6]/10 px-4 py-2 rounded-full whitespace-nowrap flex items-center gap-2">
+              <i class="fa-solid fa-heart text-red-500"></i> Sarah L.: "Friendly route setting workshops!"
+            </span>
+            <span class="text-xs tracking-wider text-[#F3F4F6] font-medium bg-white/5 px-4 py-2 rounded-full whitespace-nowrap flex items-center gap-2">
+              <i class="fa-solid fa-star text-amber-400"></i> Jason M.: "Cleanest gym and modern training area."
+            </span>
+            <span class="text-xs tracking-wider text-[#22D3EE] font-medium bg-[#3B82F6]/10 px-4 py-2 rounded-full whitespace-nowrap flex items-center gap-2">
+              <i class="fa-solid fa-shield-halved text-blue-400"></i> Dave K.: "Lead climbing course was outstanding."
+            </span>
+
+            <!-- Duplicated for loop seamlessness -->
+            <span class="text-xs tracking-wider text-[#22D3EE] font-medium bg-[#3B82F6]/10 px-4 py-2 rounded-full whitespace-nowrap flex items-center gap-2">
+              <i class="fa-solid fa-trophy text-amber-500"></i> Marc Chen: "Broke my V8 plateau!"
+            </span>
+            <span class="text-xs tracking-wider text-[#F3F4F6] font-medium bg-white/5 px-4 py-2 rounded-full whitespace-nowrap flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-emerald-400"></i> Elena Rostova: "Custom fingerboard plan is elite."
+            </span>
+            <span class="text-xs tracking-wider text-[#22D3EE] font-medium bg-[#3B82F6]/10 px-4 py-2 rounded-full whitespace-nowrap flex items-center gap-2">
+              <i class="fa-solid fa-heart text-red-500"></i> Sarah L.: "Friendly route setting workshops!"
+            </span>
+            <span class="text-xs tracking-wider text-[#F3F4F6] font-medium bg-white/5 px-4 py-2 rounded-full whitespace-nowrap flex items-center gap-2">
+              <i class="fa-solid fa-star text-amber-400"></i> Jason M.: "Cleanest gym and modern training area."
+            </span>
+            <span class="text-xs tracking-wider text-[#22D3EE] font-medium bg-[#3B82F6]/10 px-4 py-2 rounded-full whitespace-nowrap flex items-center gap-2">
+              <i class="fa-solid fa-shield-halved text-blue-400"></i> Dave K.: "Lead climbing course was outstanding."
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
