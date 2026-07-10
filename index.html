@@ -319,32 +319,32 @@
 
       <!-- Interactive Progress Navigation Bar -->
       <div class="max-w-4xl mx-auto mb-16 relative px-4" data-aos="fade-up">
-        <div class="relative flex items-center justify-between">
+        <div class="relative flex flex-col md:flex-row items-center justify-between gap-12 md:gap-0 h-[440px] md:h-auto py-4 md:py-0">
           <!-- Background progress track line -->
-          <div class="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-[4px] bg-gray-800 rounded-full z-0">
+          <div class="absolute left-1/2 -translate-x-1/2 top-9 bottom-9 w-[4px] bg-gray-800 rounded-full z-0 md:left-0 md:right-0 md:top-1/2 md:bottom-auto md:-translate-y-1/2 md:w-full md:h-[4px] md:translate-x-0">
             <!-- Active progress bar -->
-            <div id="active-progress-line" class="h-full bg-gradient-to-r from-[#3B82F6] to-[#22D3EE] rounded-full transition-all duration-500" style="width: 0%;"></div>
+            <div id="active-progress-line" class="w-full h-full bg-gradient-to-b md:bg-gradient-to-r from-[#3B82F6] to-[#22D3EE] rounded-full transition-all duration-500" style="height: 0%;"></div>
           </div>
 
           <!-- Step Buttons -->
           <button onclick="selectProgressionStep(1)" class="progression-step-btn w-10 h-10 md:w-12 md:h-12 rounded-full shrink-0 bg-[#111827] border-2 border-gray-700 hover:border-[#22D3EE] flex items-center justify-center font-heading text-sm text-[#9CA3AF] active" id="prog-btn-1">
-            <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] uppercase tracking-wider font-medium progression-step-label">Beginner</span>
+            <span class="absolute bottom-auto top-1/2 -translate-y-1/2 left-12 md:-bottom-8 md:top-auto md:translate-y-0 md:left-1/2 md:-translate-x-1/2 whitespace-nowrap text-[10px] uppercase tracking-wider font-medium progression-step-label">Beginner</span>
             1
           </button>
           <button onclick="selectProgressionStep(2)" class="progression-step-btn w-10 h-10 md:w-12 md:h-12 rounded-full shrink-0 bg-[#111827] border-2 border-gray-700 hover:border-[#22D3EE] flex items-center justify-center font-heading text-sm text-[#9CA3AF]" id="prog-btn-2">
-            <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] uppercase tracking-wider font-medium progression-step-label">Intermediate</span>
+            <span class="absolute bottom-auto top-1/2 -translate-y-1/2 left-12 md:-bottom-8 md:top-auto md:translate-y-0 md:left-1/2 md:-translate-x-1/2 whitespace-nowrap text-[10px] uppercase tracking-wider font-medium progression-step-label">Intermediate</span>
             2
           </button>
           <button onclick="selectProgressionStep(3)" class="progression-step-btn w-10 h-10 md:w-12 md:h-12 rounded-full shrink-0 bg-[#111827] border-2 border-gray-700 hover:border-[#22D3EE] flex items-center justify-center font-heading text-sm text-[#9CA3AF]" id="prog-btn-3">
-            <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] uppercase tracking-wider font-medium progression-step-label">Advanced</span>
+            <span class="absolute bottom-auto top-1/2 -translate-y-1/2 left-12 md:-bottom-8 md:top-auto md:translate-y-0 md:left-1/2 md:-translate-x-1/2 whitespace-nowrap text-[10px] uppercase tracking-wider font-medium progression-step-label">Advanced</span>
             3
           </button>
           <button onclick="selectProgressionStep(4)" class="progression-step-btn w-10 h-10 md:w-12 md:h-12 rounded-full shrink-0 bg-[#111827] border-2 border-gray-700 hover:border-[#22D3EE] flex items-center justify-center font-heading text-sm text-[#9CA3AF]" id="prog-btn-4">
-            <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] uppercase tracking-wider font-medium progression-step-label">Athlete</span>
+            <span class="absolute bottom-auto top-1/2 -translate-y-1/2 left-12 md:-bottom-8 md:top-auto md:translate-y-0 md:left-1/2 md:-translate-x-1/2 whitespace-nowrap text-[10px] uppercase tracking-wider font-medium progression-step-label">Athlete</span>
             4
           </button>
           <button onclick="selectProgressionStep(5)" class="progression-step-btn w-10 h-10 md:w-12 md:h-12 rounded-full shrink-0 bg-[#111827] border-2 border-gray-700 hover:border-[#22D3EE] flex items-center justify-center font-heading text-sm text-[#9CA3AF]" id="prog-btn-5">
-            <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] uppercase tracking-wider font-medium progression-step-label">Elite</span>
+            <span class="absolute bottom-auto top-1/2 -translate-y-1/2 left-12 md:-bottom-8 md:top-auto md:translate-y-0 md:left-1/2 md:-translate-x-1/2 whitespace-nowrap text-[10px] uppercase tracking-wider font-medium progression-step-label">Elite</span>
             5
           </button>
         </div>
@@ -561,17 +561,17 @@
 
     <!-- JS for Interactive tab controls -->
     <script>
+      let currentProgressionStep = 1;
+
       function selectProgressionStep(stepNum) {
+        currentProgressionStep = stepNum;
         // Update active class on buttons
         document.querySelectorAll('.progression-step-btn').forEach(btn => {
           btn.classList.remove('active');
         });
         document.getElementById('prog-btn-' + stepNum).classList.add('active');
 
-        // Update active progress bar width
-        // 0% for Step 1, 25% for Step 2, 50% for Step 3, 75% for Step 4, 100% for Step 5
-        const pct = (stepNum - 1) * 25;
-        document.getElementById('active-progress-line').style.width = pct + '%';
+        updateProgressBar();
 
         // Toggle card visibility with transition
         document.querySelectorAll('.progression-detail-card').forEach(card => {
@@ -581,6 +581,20 @@
         const activeCard = document.getElementById('prog-card-' + stepNum);
         activeCard.classList.remove('hidden');
       }
+
+      function updateProgressBar() {
+        const pct = (currentProgressionStep - 1) * 25;
+        const progressLine = document.getElementById('active-progress-line');
+        if (window.innerWidth < 768) {
+          progressLine.style.width = '100%';
+          progressLine.style.height = pct + '%';
+        } else {
+          progressLine.style.width = pct + '%';
+          progressLine.style.height = '100%';
+        }
+      }
+
+      window.addEventListener('resize', updateProgressBar);
       
       // Initialize state on page load
       document.addEventListener('DOMContentLoaded', () => {

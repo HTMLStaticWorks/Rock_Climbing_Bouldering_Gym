@@ -634,12 +634,11 @@ body:has(#mobile-menu:not(.hidden)) #back-to-top {
 }
 
 .progression-step-label {
-  display: none !important;
+  display: block !important;
   color: var(--text-muted) !important;
 }
 
 .progression-step-btn.active .progression-step-label {
-  display: block !important;
   color: #FFFFFF !important;
 }
 
