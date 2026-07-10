@@ -280,6 +280,18 @@ button, .btn { font-weight: 500 !important; }
   background-color: var(--bg-color) !important;
 }
 
+[data-theme="light"] .bg-\[\#0B0F19\]\/50 {
+  background-color: var(--card-bg-solid) !important;
+}
+
+[data-theme="light"] .bg-gray-850 {
+  background-color: #E2E8F0 !important;
+}
+
+[data-theme="light"] .bg-\[\#3B82F6\]\/20 {
+  background-color: rgba(37, 99, 235, 0.12) !important;
+}
+
 [data-theme="light"] .bg-\[\#111827\],
 [data-theme="light"] .bg-\[\#111827\]\/30,
 [data-theme="light"] .bg-\[\#111827\]\/40,
@@ -615,6 +627,38 @@ body:has(#mobile-menu:not(.hidden)) #back-to-top {
 .progression-detail-card {
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
+
+/* Responsive progression step labels styling */
+.progression-step-btn {
+  overflow: visible !important;
+}
+
+.progression-step-label {
+  display: none !important;
+  color: var(--text-muted) !important;
+}
+
+.progression-step-btn.active .progression-step-label {
+  display: block !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="light"] .progression-step-btn.active .progression-step-label {
+  color: var(--primary) !important;
+}
+
+@media (min-width: 768px) {
+  .progression-step-label {
+    display: block !important;
+  }
+  .progression-step-btn.active .progression-step-label {
+    color: #FFFFFF !important;
+  }
+  [data-theme="light"] .progression-step-btn.active .progression-step-label {
+    color: var(--primary) !important;
+  }
+}
+
 
 /* FAQ Details/Summary Accordion Style */
 details.group summary::-webkit-details-marker {

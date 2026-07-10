@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Programs - SummitX Climbing</title>
-  <meta name="description" content="Discover SummitX Climbing programs: beginner foundations, kids teams, mountain fitness, and championship bouldering.">
+  <meta name="description"
+    content="Discover SummitX Climbing programs: beginner foundations, kids teams, mountain fitness, and championship bouldering.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -41,6 +43,7 @@
     }
   </style>
 </head>
+
 <body class="bg-[#0B0F19] text-[#F3F4F6]">
 
   <!-- Scroll Progress -->
@@ -49,7 +52,8 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg fixed-top glass-navbar py-3">
     <div class="container-fluid px-4 max-w-7xl mx-auto flex justify-between items-center">
-      <a class="navbar-brand flex items-center gap-2 text-[#F3F4F6] text-xl tracking-wider font-heading" href="index.html">
+      <a class="navbar-brand flex items-center gap-2 text-[#F3F4F6] text-xl tracking-wider font-heading"
+        href="index.html">
         <i class="fa-solid fa-mountain-sun text-[#22D3EE]"></i>
         <span>SUMMIT<span class="text-[#3B82F6] font-medium">X</span></span>
       </a>
@@ -57,7 +61,7 @@
       <div class="hidden lg:flex items-center gap-8">
         <a class="text-[#D1D5DB] hover:text-[#22D3EE] transition-colors" href="index.html">Home</a>
         <a class="text-[#D1D5DB] hover:text-[#22D3EE] transition-colors" href="home2.html">Home 2</a>
-        
+
         <a class="text-[#D1D5DB] hover:text-[#22D3EE] transition-colors" href="about.html">About</a>
         <a class="text-[#F3F4F6] hover:text-[#22D3EE] transition-colors" href="programs.html">Programs</a>
 
@@ -69,13 +73,18 @@
       </div>
 
       <div class="hidden lg:flex items-center gap-4">
-        <button id="rtl-toggle" class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-800 hover:bg-gray-800 transition-colors" title="Toggle RTL">
+        <button id="rtl-toggle"
+          class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-800 hover:bg-gray-800 transition-colors"
+          title="Toggle RTL">
           <i id="rtl-icon" class="fa-solid fa-right-left text-lg text-gray-300"></i>
         </button>
-        <button id="theme-toggle" class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-800 hover:bg-gray-800 transition-colors" title="Toggle Theme">
+        <button id="theme-toggle"
+          class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-800 hover:bg-gray-800 transition-colors"
+          title="Toggle Theme">
           <i id="theme-icon" class="fa-regular fa-sun text-[#F59E0B] text-lg"></i>
         </button>
-        <a href="register.html" class="px-5 py-2 rounded-full border border-[#3B82F6] bg-[#3B82F6]/10 text-[#F3F4F6] hover:bg-[#3B82F6] transition-all duration-300 font-medium text-sm">
+        <a href="register.html"
+          class="px-5 py-2 rounded-full border border-[#3B82F6] bg-[#3B82F6]/10 text-[#F3F4F6] hover:bg-[#3B82F6] transition-all duration-300 font-medium text-sm">
           Sign Up
         </a>
       </div>
@@ -87,7 +96,8 @@
   </nav>
 
   <!-- Mobile Dropdown Navigation -->
-  <div id="mobile-menu" class="hidden fixed top-[70px] left-0 w-full glass-panel py-6 px-4 z-40 lg:hidden flex flex-col gap-4">
+  <div id="mobile-menu"
+    class="hidden fixed top-[70px] left-0 w-full glass-panel py-6 px-4 z-40 lg:hidden flex flex-col gap-4">
     <a class="text-lg text-[#D1D5DB]" href="index.html">Home</a>
     <a class="text-lg text-[#D1D5DB]" href="home2.html">Home 2</a>
     <a class="text-lg text-[#D1D5DB]" href="about.html">About</a>
@@ -99,14 +109,17 @@
     <a class="text-lg text-[#D1D5DB]" href="dashboard.html">Dashboard</a>
     <div class="h-[1px] bg-gray-800 my-2"></div>
     <div class="flex justify-center items-center gap-4 py-2">
-      <button id="rtl-toggle-mobile" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-800 hover:bg-gray-800 transition-colors">
+      <button id="rtl-toggle-mobile"
+        class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-800 hover:bg-gray-800 transition-colors">
         <i class="fa-solid fa-right-left text-lg text-gray-300"></i>
       </button>
-      <button id="theme-toggle-mobile" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-800 hover:bg-gray-800 transition-colors">
+      <button id="theme-toggle-mobile"
+        class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-800 hover:bg-gray-800 transition-colors">
         <i id="theme-icon-mobile" class="fa-regular fa-sun text-[#F59E0B] text-lg"></i>
       </button>
     </div>
-    <a href="register.html" class="w-full text-center py-3 rounded-xl bg-[#3B82F6] text-white hover:bg-opacity-95 transition-all">
+    <a href="register.html"
+      class="w-full text-center py-3 rounded-xl bg-[#3B82F6] text-white hover:bg-opacity-95 transition-all">
       Sign Up
     </a>
   </div>
@@ -115,18 +128,21 @@
   <header class="pt-32 pb-16 relative overflow-hidden">
     <div class="bg-gradient-orb orb-primary -top-12 -left-12"></div>
     <div class="bg-gradient-orb orb-secondary -bottom-12 -right-12"></div>
-    
+
     <div class="container max-w-7xl mx-auto px-4 grid md:grid-cols-12 gap-8 items-center relative z-10">
       <div class="md:col-span-7 space-y-4 text-left" data-aos="fade-right">
         <span class="text-xs text-[#22D3EE] uppercase tracking-widest font-heading font-medium">SummitX Formats</span>
         <h1 class="text-4xl md:text-5xl font-heading leading-tight">Climbing Development Programs</h1>
         <p class="text-[#D1D5DB] text-sm leading-relaxed max-w-xl">
-          Explore our structured programs designed to take you from foundational climbing techniques to high-performance competitive levels. We integrate specialized athletic coaching, modern route setting configurations, and digital biometric progress tracking.
+          Explore our structured programs designed to take you from foundational climbing techniques to high-performance
+          competitive levels. We integrate specialized athletic coaching, modern route setting configurations, and
+          digital biometric progress tracking.
         </p>
       </div>
       <div class="md:col-span-5" data-aos="fade-left">
         <div class="relative p-2 glass-panel rounded-3xl overflow-hidden">
-          <img src="images/indoor_climber.png" alt="Climbing Programs Banner" class="rounded-2xl w-full h-72 object-cover">
+          <img src="images/indoor_climber.png" alt="Climbing Programs Banner"
+            class="rounded-2xl w-full h-72 object-cover">
         </div>
       </div>
     </div>
@@ -135,25 +151,32 @@
   <!-- Program Tab Switcher Bar -->
   <div class="sticky top-[72px] bg-[#0B0F19] py-4 border-b border-gray-900 z-30">
     <div class="container max-w-4xl mx-auto px-4 flex justify-between gap-2 overflow-x-auto">
-      <button onclick="switchTab('beginner')" id="btn-beginner" class="program-tab-btn flex-1 py-3 px-4 rounded-xl border border-gray-800 text-center font-heading text-xs uppercase tracking-wider transition-all whitespace-nowrap active">
+      <button onclick="switchTab('beginner')" id="btn-beginner"
+        class="program-tab-btn flex-1 py-3 px-4 rounded-xl border border-gray-800 text-center font-heading text-xs uppercase tracking-wider transition-all whitespace-nowrap active">
         Beginner
       </button>
-      <button onclick="switchTab('youth')" id="btn-youth" class="program-tab-btn flex-1 py-3 px-4 rounded-xl border border-gray-800 text-center font-heading text-xs uppercase tracking-wider transition-all whitespace-nowrap">
+      <button onclick="switchTab('youth')" id="btn-youth"
+        class="program-tab-btn flex-1 py-3 px-4 rounded-xl border border-gray-800 text-center font-heading text-xs uppercase tracking-wider transition-all whitespace-nowrap">
         Youth
       </button>
-      <button onclick="switchTab('fitness')" id="btn-fitness" class="program-tab-btn flex-1 py-3 px-4 rounded-xl border border-gray-800 text-center font-heading text-xs uppercase tracking-wider transition-all whitespace-nowrap">
+      <button onclick="switchTab('fitness')" id="btn-fitness"
+        class="program-tab-btn flex-1 py-3 px-4 rounded-xl border border-gray-800 text-center font-heading text-xs uppercase tracking-wider transition-all whitespace-nowrap">
         Fitness
       </button>
-      <button onclick="switchTab('competition')" id="btn-competition" class="program-tab-btn flex-1 py-3 px-4 rounded-xl border border-gray-800 text-center font-heading text-xs uppercase tracking-wider transition-all whitespace-nowrap">
+      <button onclick="switchTab('competition')" id="btn-competition"
+        class="program-tab-btn flex-1 py-3 px-4 rounded-xl border border-gray-800 text-center font-heading text-xs uppercase tracking-wider transition-all whitespace-nowrap">
         Competition
       </button>
-      <button onclick="switchTab('adaptive')" id="btn-adaptive" class="program-tab-btn flex-1 py-3 px-4 rounded-xl border border-gray-800 text-center font-heading text-xs uppercase tracking-wider transition-all whitespace-nowrap">
+      <button onclick="switchTab('adaptive')" id="btn-adaptive"
+        class="program-tab-btn flex-1 py-3 px-4 rounded-xl border border-gray-800 text-center font-heading text-xs uppercase tracking-wider transition-all whitespace-nowrap">
         Adaptive
       </button>
-      <button onclick="switchTab('outdoor')" id="btn-outdoor" class="program-tab-btn flex-1 py-3 px-4 rounded-xl border border-gray-800 text-center font-heading text-xs uppercase tracking-wider transition-all whitespace-nowrap">
+      <button onclick="switchTab('outdoor')" id="btn-outdoor"
+        class="program-tab-btn flex-1 py-3 px-4 rounded-xl border border-gray-800 text-center font-heading text-xs uppercase tracking-wider transition-all whitespace-nowrap">
         Outdoor Crag
       </button>
-      <button onclick="switchTab('clinics')" id="btn-clinics" class="program-tab-btn flex-1 py-3 px-4 rounded-xl border border-gray-800 text-center font-heading text-xs uppercase tracking-wider transition-all whitespace-nowrap">
+      <button onclick="switchTab('clinics')" id="btn-clinics"
+        class="program-tab-btn flex-1 py-3 px-4 rounded-xl border border-gray-800 text-center font-heading text-xs uppercase tracking-wider transition-all whitespace-nowrap">
         Clinics
       </button>
     </div>
@@ -166,20 +189,24 @@
     <div id="content-beginner" class="program-content space-y-16">
       <div class="text-center max-w-xl mx-auto space-y-2">
         <h2 class="text-2xl md:text-3xl font-heading">Beginner Climbing Track</h2>
-        <p class="text-xs text-[#9CA3AF]">Perfect for first-time climbers ready to build foundation skills and gain climbing safety clearances.</p>
+        <p class="text-xs text-[#9CA3AF]">Perfect for first-time climbers ready to build foundation skills and gain
+          climbing safety clearances.</p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid lg:grid-cols-3 gap-8">
         <!-- Program 1 -->
-        <div class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
+        <div
+          class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
           <div class="h-48 relative overflow-hidden border-b border-gray-800">
-            <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=500&q=80" alt="Beginner Foundations Course" class="w-full h-full object-cover">
+            <img src="https://images.pexels.com/photos/8728630/pexels-photo-8728630.jpeg"
+              alt="Beginner Foundations Course" class="w-full h-full object-cover">
           </div>
           <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
             <div class="space-y-2">
               <span class="text-[10px] text-[#22D3EE] font-medium uppercase tracking-widest">Coached Course</span>
               <h3 class="text-lg font-heading">Beginner Foundations Course</h3>
-              <p class="text-xs text-[#9CA3AF] leading-relaxed">Learn basic hand holds (jugs, crimps, pockets), stable body alignment, and auto-belay usage procedures with on-wall coaches.</p>
+              <p class="text-xs text-[#9CA3AF] leading-relaxed">Learn basic hand holds (jugs, crimps, pockets), stable
+                body alignment, and auto-belay usage procedures with on-wall coaches.</p>
               <ul class="text-[11px] text-[#D1D5DB] space-y-1 pt-2">
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Harness & knots certified</li>
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> 3 points of contact movement</li>
@@ -191,21 +218,25 @@
                 <span class="text-[10px] uppercase text-gray-500 block">Pricing</span>
                 <span class="text-sm font-medium text-[#3B82F6]">$49 / package</span>
               </div>
-              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Book Now</a>
+              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Book
+                Now</a>
             </div>
           </div>
         </div>
 
         <!-- Program 2 -->
-        <div class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
+        <div
+          class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
           <div class="h-48 relative overflow-hidden border-b border-gray-800">
-            <img src="https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=500&q=80" alt="Bouldering Basics 101" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=500&q=80"
+              alt="Bouldering Basics 101" class="w-full h-full object-cover">
           </div>
           <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
             <div class="space-y-2">
               <span class="text-[10px] text-[#22D3EE] font-medium uppercase tracking-widest">Technique Class</span>
               <h3 class="text-lg font-heading">Bouldering Basics 101</h3>
-              <p class="text-xs text-[#9CA3AF] leading-relaxed">Focus on safety falling techniques, route reading colors, and basic body-weight weight shifts on short overhang walls.</p>
+              <p class="text-xs text-[#9CA3AF] leading-relaxed">Focus on safety falling techniques, route reading
+                colors, and basic body-weight weight shifts on short overhang walls.</p>
               <ul class="text-[11px] text-[#D1D5DB] space-y-1 pt-2">
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Landing pad fall training</li>
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Climbing hold orientation</li>
@@ -217,13 +248,15 @@
                 <span class="text-[10px] uppercase text-gray-500 block">Pricing</span>
                 <span class="text-sm font-medium text-[#3B82F6]">$59 / package</span>
               </div>
-              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Book Now</a>
+              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Book
+                Now</a>
             </div>
           </div>
         </div>
 
         <!-- Program 3 -->
-        <div class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
+        <div
+          class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
           <div class="h-48 relative overflow-hidden border-b border-gray-800">
             <img src="images/indoor_climber.png" alt="Lead Belay Certification" class="w-full h-full object-cover">
           </div>
@@ -231,7 +264,8 @@
             <div class="space-y-2">
               <span class="text-[10px] text-[#22D3EE] font-medium uppercase tracking-widest">Certification</span>
               <h3 class="text-lg font-heading">Lead Belay Certification</h3>
-              <p class="text-xs text-[#9CA3AF] leading-relaxed">Transition from top-rope to dynamic lead climbing belays. Master safety checks, rope feeding, and soft-catch mechanics.</p>
+              <p class="text-xs text-[#9CA3AF] leading-relaxed">Transition from top-rope to dynamic lead climbing
+                belays. Master safety checks, rope feeding, and soft-catch mechanics.</p>
               <ul class="text-[11px] text-[#D1D5DB] space-y-1 pt-2">
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Rope management skills</li>
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Dynamic lead catches</li>
@@ -243,7 +277,8 @@
                 <span class="text-[10px] uppercase text-gray-500 block">Pricing</span>
                 <span class="text-sm font-medium text-[#3B82F6]">$75 / session</span>
               </div>
-              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Book Now</a>
+              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Book
+                Now</a>
             </div>
           </div>
         </div>
@@ -252,7 +287,7 @@
       <!-- Beginner FAQs -->
       <div class="max-w-2xl mx-auto space-y-4 pt-8">
         <h4 class="text-center font-heading text-xl mb-6 text-[var(--text-primary)]">Beginner FAQs</h4>
-        
+
         <details class="group glass-panel rounded-xl overflow-hidden cursor-pointer select-none">
           <summary class="flex items-center justify-between p-4 focus:outline-none">
             <span class="font-heading text-sm text-[var(--text-primary)] flex items-center">
@@ -282,7 +317,8 @@
           </summary>
           <div class="px-4 pb-4 pt-2 border-t border-gray-800/40">
             <p class="text-xs text-[var(--text-muted)] pl-8 leading-relaxed">
-              Our bouldering zones are only 4.5 meters tall with soft foam padding, so you can climb without ever using ropes.
+              Our bouldering zones are only 4.5 meters tall with soft foam padding, so you can climb without ever using
+              ropes.
             </p>
           </div>
         </details>
@@ -293,20 +329,24 @@
     <div id="content-youth" class="program-content space-y-16 hidden">
       <div class="text-center max-w-xl mx-auto space-y-2">
         <h2 class="text-2xl md:text-3xl font-heading">Youth Development Tracks</h2>
-        <p class="text-xs text-[#9CA3AF]">Nurturing the next generation of climbers (Ages 4-17) through play, core coordination, and advanced competition preparation.</p>
+        <p class="text-xs text-[#9CA3AF]">Nurturing the next generation of climbers (Ages 4-17) through play, core
+          coordination, and advanced competition preparation.</p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid lg:grid-cols-3 gap-8">
         <!-- Program 1 -->
-        <div class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
+        <div
+          class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
           <div class="h-48 relative overflow-hidden border-b border-gray-800">
-            <img src="https://images.unsplash.com/photo-1564982752274-38c4159987f7?auto=format&fit=crop&w=500&q=80" alt="SummitX Youth Climbing Club" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1564982752274-38c4159987f7?auto=format&fit=crop&w=500&q=80"
+              alt="SummitX Youth Climbing Club" class="w-full h-full object-cover">
           </div>
           <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
             <div class="space-y-2">
               <span class="text-[10px] text-[#3B82F6] font-medium uppercase tracking-widest">Ages 8-17</span>
               <h3 class="text-lg font-heading">Youth Climbing Club</h3>
-              <p class="text-xs text-[#9CA3AF] leading-relaxed">Encourage coordination, safety checklists, and athletic problem-solving in a fun, collaborative group gym setting.</p>
+              <p class="text-xs text-[#9CA3AF] leading-relaxed">Encourage coordination, safety checklists, and athletic
+                problem-solving in a fun, collaborative group gym setting.</p>
               <ul class="text-[11px] text-[#D1D5DB] space-y-1 pt-2">
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Supervised team blocks</li>
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Fun coordination drills</li>
@@ -318,21 +358,25 @@
                 <span class="text-[10px] uppercase text-gray-500 block">Pricing</span>
                 <span class="text-sm font-medium text-[#3B82F6]">$120 / month</span>
               </div>
-              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Register</a>
+              <a href="register.html"
+                class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Register</a>
             </div>
           </div>
         </div>
 
         <!-- Program 2 -->
-        <div class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
+        <div
+          class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
           <div class="h-48 relative overflow-hidden border-b border-gray-800">
-            <img src="https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=500&q=80" alt="Competitive Youth Team" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=500&q=80"
+              alt="Competitive Youth Team" class="w-full h-full object-cover">
           </div>
           <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
             <div class="space-y-2">
               <span class="text-[10px] text-[#3B82F6] font-medium uppercase tracking-widest">Ages 10-17</span>
               <h3 class="text-lg font-heading">Competitive Youth Team</h3>
-              <p class="text-xs text-[#9CA3AF] leading-relaxed">Dedicated training schedules for youth climbers aiming to participate in regional bouldering championship circuits.</p>
+              <p class="text-xs text-[#9CA3AF] leading-relaxed">Dedicated training schedules for youth climbers aiming
+                to participate in regional bouldering championship circuits.</p>
               <ul class="text-[11px] text-[#D1D5DB] space-y-1 pt-2">
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Comp formats preparation</li>
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Video-based analysis</li>
@@ -344,21 +388,25 @@
                 <span class="text-[10px] uppercase text-gray-500 block">Pricing</span>
                 <span class="text-sm font-medium text-[#3B82F6]">$160 / month</span>
               </div>
-              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Register</a>
+              <a href="register.html"
+                class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Register</a>
             </div>
           </div>
         </div>
 
         <!-- Program 3 -->
-        <div class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
+        <div
+          class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
           <div class="h-48 relative overflow-hidden border-b border-gray-800">
-            <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=500&q=80" alt="Little Monkeys Camp" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=500&q=80"
+              alt="Little Monkeys Camp" class="w-full h-full object-cover">
           </div>
           <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
             <div class="space-y-2">
               <span class="text-[10px] text-[#3B82F6] font-medium uppercase tracking-widest">Ages 4-7</span>
               <h3 class="text-lg font-heading">Little Monkeys Climbing Camp</h3>
-              <p class="text-xs text-[#9CA3AF] leading-relaxed">Introduction to climbing safety through play-based games, sensory hold exploration, and safe landing habits.</p>
+              <p class="text-xs text-[#9CA3AF] leading-relaxed">Introduction to climbing safety through play-based
+                games, sensory hold exploration, and safe landing habits.</p>
               <ul class="text-[11px] text-[#D1D5DB] space-y-1 pt-2">
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Agility games & crawls</li>
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> 1:4 coach ratio safety</li>
@@ -370,7 +418,8 @@
                 <span class="text-[10px] uppercase text-gray-500 block">Pricing</span>
                 <span class="text-sm font-medium text-[#3B82F6]">$90 / week</span>
               </div>
-              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Register</a>
+              <a href="register.html"
+                class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Register</a>
             </div>
           </div>
         </div>
@@ -381,20 +430,24 @@
     <div id="content-fitness" class="program-content space-y-16 hidden">
       <div class="text-center max-w-xl mx-auto space-y-2">
         <h2 class="text-2xl md:text-3xl font-heading">Mountain Fitness & Conditioning</h2>
-        <p class="text-xs text-[#9CA3AF]">Build climbing-specific endurance, finger power-to-weight metrics, and flexible core stabilizer structures.</p>
+        <p class="text-xs text-[#9CA3AF]">Build climbing-specific endurance, finger power-to-weight metrics, and
+          flexible core stabilizer structures.</p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid lg:grid-cols-3 gap-8">
         <!-- Program 1 -->
-        <div class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
+        <div
+          class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
           <div class="h-48 relative overflow-hidden border-b border-gray-800">
             <img src="images/biomechanical_lab.png" alt="Core Strength Conditioning" class="w-full h-full object-cover">
           </div>
           <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
             <div class="space-y-2">
-              <span class="text-[10px] text-[#22D3EE] font-medium uppercase tracking-widest">Strength Conditioning</span>
+              <span class="text-[10px] text-[#22D3EE] font-medium uppercase tracking-widest">Strength
+                Conditioning</span>
               <h3 class="text-lg font-heading">Climbing Core & Strength</h3>
-              <p class="text-xs text-[#9CA3AF] leading-relaxed">Develop upper-body pulling strength, body-tension stabilizers on rings, and core power that prevents slips.</p>
+              <p class="text-xs text-[#9CA3AF] leading-relaxed">Develop upper-body pulling strength, body-tension
+                stabilizers on rings, and core power that prevents slips.</p>
               <ul class="text-[11px] text-[#D1D5DB] space-y-1 pt-2">
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Rings & TRX routines</li>
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Dynamic pull strength</li>
@@ -406,21 +459,25 @@
                 <span class="text-[10px] uppercase text-gray-500 block">Pricing</span>
                 <span class="text-sm font-medium text-[#3B82F6]">$65 / month</span>
               </div>
-              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Sign Up</a>
+              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Sign
+                Up</a>
             </div>
           </div>
         </div>
 
         <!-- Program 2 -->
-        <div class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
+        <div
+          class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
           <div class="h-48 relative overflow-hidden border-b border-gray-800">
-            <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=500&q=80" alt="Finger Strength Lab" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=500&q=80"
+              alt="Finger Strength Lab" class="w-full h-full object-cover">
           </div>
           <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
             <div class="space-y-2">
               <span class="text-[10px] text-[#22D3EE] font-medium uppercase tracking-widest">Fingertip Metrics</span>
               <h3 class="text-lg font-heading">Finger Strength & Hangboard Lab</h3>
-              <p class="text-xs text-[#9CA3AF] leading-relaxed">Formulate exact power-to-weight ratios on 15mm-20mm edges. Max loaded hang programs coached under force monitors.</p>
+              <p class="text-xs text-[#9CA3AF] leading-relaxed">Formulate exact power-to-weight ratios on 15mm-20mm
+                edges. Max loaded hang programs coached under force monitors.</p>
               <ul class="text-[11px] text-[#D1D5DB] space-y-1 pt-2">
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Edge-loading calibration</li>
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Force gauge tracking</li>
@@ -432,21 +489,25 @@
                 <span class="text-[10px] uppercase text-gray-500 block">Pricing</span>
                 <span class="text-sm font-medium text-[#3B82F6]">$45 / session</span>
               </div>
-              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Sign Up</a>
+              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Sign
+                Up</a>
             </div>
           </div>
         </div>
 
         <!-- Program 3 -->
-        <div class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
+        <div
+          class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
           <div class="h-48 relative overflow-hidden border-b border-gray-800">
-            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=500&q=80" alt="Climber Yoga" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=500&q=80"
+              alt="Climber Yoga" class="w-full h-full object-cover">
           </div>
           <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
             <div class="space-y-2">
               <span class="text-[10px] text-[#22D3EE] font-medium uppercase tracking-widest">Mobility</span>
               <h3 class="text-lg font-heading">Climber Yoga & Flexibility</h3>
-              <p class="text-xs text-[#9CA3AF] leading-relaxed">Focus on hip mobility openers, shoulder recovery, and flexibility systems that help hold positions closer to walls.</p>
+              <p class="text-xs text-[#9CA3AF] leading-relaxed">Focus on hip mobility openers, shoulder recovery, and
+                flexibility systems that help hold positions closer to walls.</p>
               <ul class="text-[11px] text-[#D1D5DB] space-y-1 pt-2">
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Shoulder opener structures</li>
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Hip flexor flexibility</li>
@@ -458,7 +519,8 @@
                 <span class="text-[10px] uppercase text-gray-500 block">Pricing</span>
                 <span class="text-sm font-medium text-[#3B82F6]">$30 / month</span>
               </div>
-              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Sign Up</a>
+              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Sign
+                Up</a>
             </div>
           </div>
         </div>
@@ -469,20 +531,24 @@
     <div id="content-competition" class="program-content space-y-16 hidden">
       <div class="text-center max-w-xl mx-auto space-y-2">
         <h2 class="text-2xl md:text-3xl font-heading">Elite Competition Arena</h2>
-        <p class="text-xs text-[#9CA3AF]">Designed for advanced athletes training for tournament structures, dynamic coordinates, and flash-format redpoints.</p>
+        <p class="text-xs text-[#9CA3AF]">Designed for advanced athletes training for tournament structures, dynamic
+          coordinates, and flash-format redpoints.</p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         <!-- Program 1 -->
-        <div class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
+        <div
+          class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
           <div class="h-56 relative overflow-hidden border-b border-gray-800">
-            <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=600&q=80" alt="Elite Squad Championship" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=600&q=80"
+              alt="Elite Squad Championship" class="w-full h-full object-cover">
           </div>
           <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
             <div class="space-y-2">
               <span class="text-[10px] text-[#F59E0B] font-medium uppercase tracking-widest">Athletes Only</span>
               <h3 class="text-xl font-heading">Elite Squad Championship Training</h3>
-              <p class="text-xs text-[#9CA3AF] leading-relaxed">Simulated competition qualifying blocks, pressure isolation simulations, and high frame rate joint angles analysis.</p>
+              <p class="text-xs text-[#9CA3AF] leading-relaxed">Simulated competition qualifying blocks, pressure
+                isolation simulations, and high frame rate joint angles analysis.</p>
               <ul class="text-[11px] text-[#D1D5DB] space-y-1 pt-2">
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Isolation room protocols</li>
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Joint angle optimizations</li>
@@ -494,21 +560,25 @@
                 <span class="text-[10px] uppercase text-gray-500 block">Pricing</span>
                 <span class="text-sm font-medium text-[#3B82F6]">$190 / month</span>
               </div>
-              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Apply Now</a>
+              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Apply
+                Now</a>
             </div>
           </div>
         </div>
 
         <!-- Program 2 -->
-        <div class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
+        <div
+          class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
           <div class="h-56 relative overflow-hidden border-b border-gray-800">
-            <img src="images/indoor_climber.png" alt="Dynamic Coordination Beta Clinic" class="w-full h-full object-cover">
+            <img src="images/indoor_climber.png" alt="Dynamic Coordination Beta Clinic"
+              class="w-full h-full object-cover">
           </div>
           <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
             <div class="space-y-2">
               <span class="text-[10px] text-[#F59E0B] font-medium uppercase tracking-widest">Masterclass</span>
               <h3 class="text-xl font-heading">Dynamic Coordination Beta Clinic</h3>
-              <p class="text-xs text-[#9CA3AF] leading-relaxed">Master explosive dynamic jump coordinate paths and micro friction slabs. Coached directly by national route setting teams.</p>
+              <p class="text-xs text-[#9CA3AF] leading-relaxed">Master explosive dynamic jump coordinate paths and micro
+                friction slabs. Coached directly by national route setting teams.</p>
               <ul class="text-[11px] text-[#D1D5DB] space-y-1 pt-2">
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Dyno launching mechanics</li>
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Slab friction body angles</li>
@@ -520,7 +590,8 @@
                 <span class="text-[10px] uppercase text-gray-500 block">Pricing</span>
                 <span class="text-sm font-medium text-[#3B82F6]">$50 / session</span>
               </div>
-              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Apply Now</a>
+              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Apply
+                Now</a>
             </div>
           </div>
         </div>
@@ -531,23 +602,28 @@
     <div id="content-adaptive" class="program-content space-y-16 hidden">
       <div class="text-center max-w-xl mx-auto space-y-2">
         <h2 class="text-2xl md:text-3xl font-heading">Adaptive Climbing</h2>
-        <p class="text-xs text-[#9CA3AF]">Creating an inclusive climbing environment with adaptive pulleys, sensory adjustments, and specialized coaching.</p>
+        <p class="text-xs text-[#9CA3AF]">Creating an inclusive climbing environment with adaptive pulleys, sensory
+          adjustments, and specialized coaching.</p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         <!-- Program 1 -->
-        <div class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
+        <div
+          class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
           <div class="h-56 relative overflow-hidden border-b border-gray-800">
-            <img src="https://images.unsplash.com/photo-1551698618-1ffdfe1d9772?auto=format&fit=crop&w=600&q=80" alt="Para-Climbing Program" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1551698618-1ffdfe1d9772?auto=format&fit=crop&w=600&q=80"
+              alt="Para-Climbing Program" class="w-full h-full object-cover">
           </div>
           <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
             <div class="space-y-2">
               <span class="text-[10px] text-[#22D3EE] font-medium uppercase tracking-widest">Inclusive Support</span>
               <h3 class="text-xl font-heading">Para-Climbing Support Program</h3>
-              <p class="text-xs text-[#9CA3AF] leading-relaxed">Custom harness systems, mechanical pulley rigging, and dedicated side-climbing coach assistance for mobility athletes.</p>
+              <p class="text-xs text-[#9CA3AF] leading-relaxed">Custom harness systems, mechanical pulley rigging, and
+                dedicated side-climbing coach assistance for mobility athletes.</p>
               <ul class="text-[11px] text-[#D1D5DB] space-y-1 pt-2">
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Custom mechanical pulleys</li>
-                <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Fully certified adaptive coaches</li>
+                <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Fully certified adaptive coaches
+                </li>
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Specialized climbing grips</li>
               </ul>
             </div>
@@ -556,21 +632,25 @@
                 <span class="text-[10px] uppercase text-gray-500 block">Pricing</span>
                 <span class="text-sm font-medium text-[#3B82F6]">$45 / month</span>
               </div>
-              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Join Program</a>
+              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Join
+                Program</a>
             </div>
           </div>
         </div>
 
         <!-- Program 2 -->
-        <div class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
+        <div
+          class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
           <div class="h-56 relative overflow-hidden border-b border-gray-800">
-            <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=600&q=80" alt="Sensory Hours" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=600&q=80"
+              alt="Sensory Hours" class="w-full h-full object-cover">
           </div>
           <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
             <div class="space-y-2">
               <span class="text-[10px] text-[#22D3EE] font-medium uppercase tracking-widest">Calm Environment</span>
               <h3 class="text-xl font-heading">Sensory-Friendly Hours</h3>
-              <p class="text-xs text-[#9CA3AF] leading-relaxed">Designated hours with muted sound levels, dimmed lighting, and fewer gym occupants. Perfect for sensory-sensitive athletes.</p>
+              <p class="text-xs text-[#9CA3AF] leading-relaxed">Designated hours with muted sound levels, dimmed
+                lighting, and fewer gym occupants. Perfect for sensory-sensitive athletes.</p>
               <ul class="text-[11px] text-[#D1D5DB] space-y-1 pt-2">
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Reduced capacity limit</li>
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Dimmed warm lights</li>
@@ -582,7 +662,8 @@
                 <span class="text-[10px] uppercase text-gray-500 block">Pricing</span>
                 <span class="text-sm font-medium text-[#3B82F6]">$30 / month</span>
               </div>
-              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Join Program</a>
+              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Join
+                Program</a>
             </div>
           </div>
         </div>
@@ -593,20 +674,24 @@
     <div id="content-outdoor" class="program-content space-y-16 hidden">
       <div class="text-center max-w-xl mx-auto space-y-2">
         <h2 class="text-2xl md:text-3xl font-heading">Gym-To-Crag Transition</h2>
-        <p class="text-xs text-[#9CA3AF]">Take your gym safety rules and physical mastery outside to real sandstone and granite cliffs.</p>
+        <p class="text-xs text-[#9CA3AF]">Take your gym safety rules and physical mastery outside to real sandstone and
+          granite cliffs.</p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         <!-- Program 1 -->
-        <div class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
+        <div
+          class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
           <div class="h-56 relative overflow-hidden border-b border-gray-800">
-            <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=600&q=80" alt="Gym to Crag Certification" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=600&q=80"
+              alt="Gym to Crag Certification" class="w-full h-full object-cover">
           </div>
           <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
             <div class="space-y-2">
               <span class="text-[10px] text-[#3B82F6] font-medium uppercase tracking-widest">Guided Outing</span>
               <h3 class="text-xl font-heading">Gym to Crag Certification</h3>
-              <p class="text-xs text-[#9CA3AF] leading-relaxed">Learn to construct quad anchors, clean links at the top of a climb, and practice rappelling safely on real cliffs.</p>
+              <p class="text-xs text-[#9CA3AF] leading-relaxed">Learn to construct quad anchors, clean links at the top
+                of a climb, and practice rappelling safely on real cliffs.</p>
               <ul class="text-[11px] text-[#D1D5DB] space-y-1 pt-2">
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Anchor building systems</li>
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Wilderness Leave No Trace</li>
@@ -618,13 +703,15 @@
                 <span class="text-[10px] uppercase text-gray-500 block">Pricing</span>
                 <span class="text-sm font-medium text-[#3B82F6]">$125 / course</span>
               </div>
-              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Sign Up</a>
+              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Sign
+                Up</a>
             </div>
           </div>
         </div>
 
         <!-- Program 2 -->
-        <div class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
+        <div
+          class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
           <div class="h-56 relative overflow-hidden border-b border-gray-800">
             <img src="images/routesetter.png" alt="Sport Lead Climbing Prep" class="w-full h-full object-cover">
           </div>
@@ -632,7 +719,8 @@
             <div class="space-y-2">
               <span class="text-[10px] text-[#3B82F6] font-medium uppercase tracking-widest">Lead Transition</span>
               <h3 class="text-xl font-heading">Sport Lead Climbing Prep</h3>
-              <p class="text-xs text-[#9CA3AF] leading-relaxed">Transition your indoor lead techniques to outdoor routes. Focus on clip stances, fall management, and safety parameters.</p>
+              <p class="text-xs text-[#9CA3AF] leading-relaxed">Transition your indoor lead techniques to outdoor
+                routes. Focus on clip stances, fall management, and safety parameters.</p>
               <ul class="text-[11px] text-[#D1D5DB] space-y-1 pt-2">
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Outdoor bolt clipping stances</li>
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Dynamic belay mechanics</li>
@@ -644,7 +732,8 @@
                 <span class="text-[10px] uppercase text-gray-500 block">Pricing</span>
                 <span class="text-sm font-medium text-[#3B82F6]">$140 / course</span>
               </div>
-              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Sign Up</a>
+              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Sign
+                Up</a>
             </div>
           </div>
         </div>
@@ -655,20 +744,24 @@
     <div id="content-clinics" class="program-content space-y-16 hidden">
       <div class="text-center max-w-xl mx-auto space-y-2">
         <h2 class="text-2xl md:text-3xl font-heading">Technique Clinics</h2>
-        <p class="text-xs text-[#9CA3AF]">Targeted sessions focusing on complex movements, beta optimizations, and dynamic wall launches.</p>
+        <p class="text-xs text-[#9CA3AF]">Targeted sessions focusing on complex movements, beta optimizations, and
+          dynamic wall launches.</p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         <!-- Program 1 -->
-        <div class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
+        <div
+          class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
           <div class="h-56 relative overflow-hidden border-b border-gray-800">
-            <img src="https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=600&q=80" alt="Dynamic Coordination Masterclass" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=600&q=80"
+              alt="Dynamic Coordination Masterclass" class="w-full h-full object-cover">
           </div>
           <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
             <div class="space-y-2">
               <span class="text-[10px] text-[#22D3EE] font-medium uppercase tracking-widest">Coaching Session</span>
               <h3 class="text-xl font-heading">Dynamic Coordination Masterclass</h3>
-              <p class="text-xs text-[#9CA3AF] leading-relaxed">Master momentum-building dynamic moves, run-and-jumps, and fast coord patterns. Coached under tournament settings.</p>
+              <p class="text-xs text-[#9CA3AF] leading-relaxed">Master momentum-building dynamic moves, run-and-jumps,
+                and fast coord patterns. Coached under tournament settings.</p>
               <ul class="text-[11px] text-[#D1D5DB] space-y-1 pt-2">
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Dyno timing optimization</li>
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Kinetic transfers control</li>
@@ -680,21 +773,25 @@
                 <span class="text-[10px] uppercase text-gray-500 block">Pricing</span>
                 <span class="text-sm font-medium text-[#3B82F6]">$35 / session</span>
               </div>
-              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Book Clinic</a>
+              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Book
+                Clinic</a>
             </div>
           </div>
         </div>
 
         <!-- Program 2 -->
-        <div class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
+        <div
+          class="glass-panel rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
           <div class="h-56 relative overflow-hidden border-b border-gray-800">
-            <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=600&q=80" alt="Fear Management Clinic" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=600&q=80"
+              alt="Fear Management Clinic" class="w-full h-full object-cover">
           </div>
           <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
             <div class="space-y-2">
               <span class="text-[10px] text-[#22D3EE] font-medium uppercase tracking-widest">Mental Prep</span>
               <h3 class="text-xl font-heading">Fear Management & Falling Clinic</h3>
-              <p class="text-xs text-[#9CA3AF] leading-relaxed">Learn safe falling techniques on lead ropes, control adrenaline rushes, and build absolute trust in belayers.</p>
+              <p class="text-xs text-[#9CA3AF] leading-relaxed">Learn safe falling techniques on lead ropes, control
+                adrenaline rushes, and build absolute trust in belayers.</p>
               <ul class="text-[11px] text-[#D1D5DB] space-y-1 pt-2">
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Controlled lead whip falls</li>
                 <li><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> Adrenaline management</li>
@@ -706,7 +803,8 @@
                 <span class="text-[10px] uppercase text-gray-500 block">Pricing</span>
                 <span class="text-sm font-medium text-[#3B82F6]">$40 / session</span>
               </div>
-              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Book Clinic</a>
+              <a href="register.html" class="px-4 py-2 bg-[#3B82F6] text-white rounded-lg text-xs font-medium">Book
+                Clinic</a>
             </div>
           </div>
         </div>
@@ -725,7 +823,8 @@
           <span>SUMMIT<span class="text-[#3B82F6] font-medium">X</span></span>
         </a>
         <p class="text-xs leading-relaxed text-[#9CA3AF] max-w-sm">
-          SummitX blends scientific performance logs, smart training boards, and Olympic conditioning systems to accelerate your route progressions.
+          SummitX blends scientific performance logs, smart training boards, and Olympic conditioning systems to
+          accelerate your route progressions.
         </p>
         <div class="flex gap-3 pt-2">
           <a href="#" class="social-icon-btn instagram" title="Instagram">
@@ -780,7 +879,8 @@
     </div>
 
     <!-- Bottom bar -->
-    <div class="container max-w-7xl mx-auto px-4 pt-6 border-t border-gray-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+    <div
+      class="container max-w-7xl mx-auto px-4 pt-6 border-t border-gray-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
       <p class="text-[#6B7280]">&copy; 2026 SummitX Climbing. Climb Higher, Push Further.</p>
       <div class="flex gap-4">
         <a href="#" class="hover:text-[#F3F4F6] text-gray-500 transition-colors">Privacy Policy</a>
@@ -833,4 +933,5 @@
   </script>
   <script src="js/main.js"></script>
 </body>
+
 </html>
