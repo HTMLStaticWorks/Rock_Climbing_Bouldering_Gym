@@ -251,15 +251,41 @@
 
       <!-- Beginner FAQs -->
       <div class="max-w-2xl mx-auto space-y-4 pt-8">
-        <h4 class="text-center font-heading text-xl">Beginner FAQs</h4>
-        <div class="glass-panel p-4 rounded-xl space-y-2">
-          <p class="font-heading text-sm text-[#F3F4F6]"><i class="fa-solid fa-circle-question mr-2 text-[#3B82F6]"></i>Do I need special shoes?</p>
-          <p class="text-xs text-[#9CA3AF] pl-6">We provide specialized, high-grip climbing rental shoes during all introductory classes.</p>
-        </div>
-        <div class="glass-panel p-4 rounded-xl space-y-2">
-          <p class="font-heading text-sm text-[#F3F4F6]"><i class="fa-solid fa-circle-question mr-2 text-[#3B82F6]"></i>What if I am afraid of heights?</p>
-          <p class="text-xs text-[#9CA3AF] pl-6">Our bouldering zones are only 4.5 meters tall with soft foam padding, so you can climb without ever using ropes.</p>
-        </div>
+        <h4 class="text-center font-heading text-xl mb-6 text-[var(--text-primary)]">Beginner FAQs</h4>
+        
+        <details class="group glass-panel rounded-xl overflow-hidden cursor-pointer select-none">
+          <summary class="flex items-center justify-between p-4 focus:outline-none">
+            <span class="font-heading text-sm text-[var(--text-primary)] flex items-center">
+              <i class="fa-solid fa-circle-question mr-3 text-[#3B82F6]"></i>
+              Do I need special shoes?
+            </span>
+            <span class="transition-transform duration-300 group-open:rotate-180 text-[var(--text-muted)]">
+              <i class="fa-solid fa-chevron-down text-xs"></i>
+            </span>
+          </summary>
+          <div class="px-4 pb-4 pt-2 border-t border-gray-800/40">
+            <p class="text-xs text-[var(--text-muted)] pl-8 leading-relaxed">
+              We provide specialized, high-grip climbing rental shoes during all introductory classes.
+            </p>
+          </div>
+        </details>
+
+        <details class="group glass-panel rounded-xl overflow-hidden cursor-pointer select-none">
+          <summary class="flex items-center justify-between p-4 focus:outline-none">
+            <span class="font-heading text-sm text-[var(--text-primary)] flex items-center">
+              <i class="fa-solid fa-circle-question mr-3 text-[#3B82F6]"></i>
+              What if I am afraid of heights?
+            </span>
+            <span class="transition-transform duration-300 group-open:rotate-180 text-[var(--text-muted)]">
+              <i class="fa-solid fa-chevron-down text-xs"></i>
+            </span>
+          </summary>
+          <div class="px-4 pb-4 pt-2 border-t border-gray-800/40">
+            <p class="text-xs text-[var(--text-muted)] pl-8 leading-relaxed">
+              Our bouldering zones are only 4.5 meters tall with soft foam padding, so you can climb without ever using ropes.
+            </p>
+          </div>
+        </details>
       </div>
     </div>
 

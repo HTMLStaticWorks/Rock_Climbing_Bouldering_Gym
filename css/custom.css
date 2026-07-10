@@ -615,3 +615,25 @@ body:has(#mobile-menu:not(.hidden)) #back-to-top {
 .progression-detail-card {
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
+
+/* FAQ Details/Summary Accordion Style */
+details.group summary::-webkit-details-marker {
+  display: none !important;
+}
+details.group summary {
+  list-style: none !important;
+}
+details[open] summary ~ * {
+  animation: faqSweep 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@keyframes faqSweep {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
