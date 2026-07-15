@@ -356,10 +356,21 @@ a[href="register.html"],
 a.bg-\[\#3B82F6\],
 button.bg-\[\#3B82F6\],
 button[type="submit"],
-.glow-btn-primary {
+.glow-btn-primary,
+[data-theme="light"] a[href="register.html"],
+[data-theme="light"] a.bg-\[\#3B82F6\],
+[data-theme="light"] button.bg-\[\#3B82F6\],
+[data-theme="light"] button[type="submit"],
+[data-theme="light"] .glow-btn-primary,
+[data-theme="light"] a[href="register.html"]:hover,
+[data-theme="light"] a.bg-\[\#3B82F6\]:hover,
+[data-theme="light"] button.bg-\[\#3B82F6\]:hover,
+[data-theme="light"] button[type="submit"]:hover,
+[data-theme="light"] .glow-btn-primary:hover {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
   color: #FFFFFF !important;
 }
+
 
 a[href="register.html"]:hover,
 a.bg-\[\#3B82F6\]:hover,
