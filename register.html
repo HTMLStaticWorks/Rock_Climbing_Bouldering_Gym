@@ -43,6 +43,17 @@
       border-color: #22D3EE;
       box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
     }
+    /* Light mode contrast fixes */
+    [data-theme="light"] a[href="login.html"] {
+      color: #2563EB !important;
+    }
+    [data-theme="light"] a[href="login.html"]:hover {
+      color: #1d4ed8 !important;
+      text-decoration: underline !important;
+    }
+    [data-theme="light"] a.hover\:text-white:hover {
+      color: #2563EB !important;
+    }
   </style>
 </head>
 <body class="bg-[#0B0F19] text-[#F3F4F6] min-h-screen flex items-center justify-center relative overflow-hidden">

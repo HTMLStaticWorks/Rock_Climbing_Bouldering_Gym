@@ -418,7 +418,11 @@ button[type="submit"]:hover,
 
 /* Enforce Solid Blue Background & White Text for Sign Up button in both themes */
 nav a[href="register.html"],
-#mobile-menu a[href="register.html"] {
+.navbar a[href="register.html"],
+#mobile-menu a[href="register.html"],
+[data-theme="light"] nav a[href="register.html"],
+[data-theme="light"] .navbar a[href="register.html"],
+[data-theme="light"] #mobile-menu a[href="register.html"] {
   background-color: #3B82F6 !important;
   color: #FFFFFF !important;
   border-color: #3B82F6 !important;
@@ -426,11 +430,16 @@ nav a[href="register.html"],
 }
 
 nav a[href="register.html"]:hover,
-#mobile-menu a[href="register.html"]:hover {
+.navbar a[href="register.html"]:hover,
+#mobile-menu a[href="register.html"]:hover,
+[data-theme="light"] nav a[href="register.html"]:hover,
+[data-theme="light"] .navbar a[href="register.html"]:hover,
+[data-theme="light"] #mobile-menu a[href="register.html"]:hover {
   background-color: #2563EB !important;
   border-color: #2563EB !important;
   color: #FFFFFF !important;
 }
+
 
 /* ============================================
    Premium Social Icon Button — Dark & Light
